@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.site-title__logo {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  max-width: rem(102);
+  width: 100%;
+
+  @include mq(md){
+    max-width: rem(133);
+  }
+}
+
+
+.site-title__logo--md {
+  max-width: rem(120);
+
+  @include mq(md){
+    max-width: rem(200);
+  }
+}
+
+.site-title__logo--lg {
+  margin: auto;
+  max-width: rem(174);
+
+  @include mq(md){
+    max-width: rem(200);
+  }
+}

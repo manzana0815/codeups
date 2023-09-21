@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.sp-nav__left {
+  @include mq(md){
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(120);
+  }
+}
+
+.sp-nav__right {
+  @include mq(md){
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(120);
+  }
+}
+
+.sp-nav__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-nav__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-nav__link {
+  color: $white;
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-left: 1.375em;
+  position: relative;
+}
+
+.sp-nav__link::before {
+  content: "";
+  background-image: url("../images/common/seastar.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 1.125em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  vertical-align: bottom;
+  width: 1.125em;
+}
+
+.sp-nav__sub-links {
+  color: $white;
+  margin-left: 1.375em;
+}
+
+.sp-nav__sub-link {
+  padding: rem(12) 0;
+}
+
+.sp-nav__sub-link a {
+  display: block;
+  line-height: calc(18 / 16);
+}

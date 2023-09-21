@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.voice__cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(40);
+  margin-top: rem(40);
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: rem(30);
+  }
+}
+
+.voice__btn {
+  margin-top: rem(40);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
+
+.voice__drawing--top {
+  @include mq(md) {
+    max-width: calc(301 / 1440 * 100%);
+    overflow: hidden;
+    position: absolute;
+    top: rem(-120);
+    left: calc(100 / 1440 * 100%);
+    width: 100%;
+  }
+}
+
+.voice__drawing--bottom {
+  @include mq(md) {
+    max-width: calc(71 / 1440 * 100%);
+    overflow: hidden;
+    position: absolute;
+    bottom: rem(-60);
+    right: calc(145 / 1440 * 100%);
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,50 @@
+@use "global" as *;
+
+$drawer-color: $white;
+$drawer-height: rem(1);
+$drawer-width: rem(32);
+
+.hamburger {
+  position: relative;
+  height: inherit;
+  width: $drawer-width;
+  z-index: 9999;
+
+    @include mq(md) {
+      display: none;
+    }
+}
+
+.hamburger span {
+  background-color: $drawer-color;
+  border-radius: 1px;
+  display: block;
+  height: $drawer-height;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc((100% - $drawer-height) / 2);
+  top: 50%;
+  transition: ease 0.3s;
+  width: $drawer-width;
+}
+
+.hamburger span:nth-child(1) {
+  transform: translateY(rem(-10));
+}
+
+.hamburger span:nth-child(3) {
+  transform: translateY(rem(10));
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: rotate(36.87deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: rotate(-36.87deg);
+}

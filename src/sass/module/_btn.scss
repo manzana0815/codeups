@@ -1,1 +1,58 @@
 @use "global" as *;
+
+.btn {
+  background-color: $blue;
+  border: 1px solid $blue;
+  color: $white;
+  display: inline-block;
+  font-family: $english-font;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(22 / 14);
+  margin: auto;
+  max-width: rem(202);
+  padding: rem(16) rem(32);
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn::first-letter {
+  text-transform: uppercase;
+}
+
+.btn::before {
+  background-color: $white;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: $blue;
+}
+
+.btn:hover::before {
+  transform: scale(1, 1);
+}
+
+.btn::after {
+  content: "";
+  background-color: transparent;
+  border: 1px solid $blue;
+  height: 100%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  z-index: -10;
+
+}

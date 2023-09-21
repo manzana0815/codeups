@@ -1,0 +1,126 @@
+@use "global" as *;
+
+.about__wrapper {
+  margin-top: rem(50);
+  position: relative;
+
+  @include mq(md){
+    margin-top: rem(120);
+  }
+}
+
+.about__images {
+  position: relative;
+}
+
+.about__img {
+  overflow: hidden;
+}
+
+.about__img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about__img--left {
+  position: absolute;
+  top: calc(-26 / 194 * 100%);
+  width: calc(128 / 345 * 100%);
+  z-index: 1;
+
+  @include mq(md){
+    top: calc(-80 / 606 * 100%);
+    width: calc(400 / 1080 * 100%);
+  }
+}
+
+.about__img--right {
+  width: calc(281 / 345 * 100%);
+  margin-left: auto;
+
+  @include mq(md){
+    width: calc(880 / 1080 * 100%);
+  }
+}
+
+.about__img--left img {
+  aspect-ratio: 128 / 194;
+
+  @include mq(md){
+    aspect-ratio: 400 / 606;
+  }
+}
+
+.about__img--right img {
+  aspect-ratio: 281 / 186;
+
+  @include mq(md){
+    aspect-ratio: 880/ 581;
+  }
+}
+
+.about__contents {
+  margin-top: rem(40);
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    gap: 3.703704%;
+    margin-top: 0;
+    margin-left: calc(199 / 1080 * 100%);
+    max-width: rem(840);
+    position: absolute;
+    top: calc(120 / 581 * 100%);
+    text-shadow: 0 4px 4px rgba($color: #000, $alpha: 0.25);
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+.about__contents-title {
+  color: $blue;
+  font-family: $english-font;
+  font-size: rem(40);
+  font-weight: $regular;
+  line-height: 1;
+
+  @include mq(md){
+    color: $white;
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+    max-width: rem(400);
+    width: 100%;
+  }
+}
+
+.about__content {
+  @include mq(md){
+    max-width: rem(400);
+    width: 100%;
+  }
+}
+
+.about__text {
+  margin-top: rem(16);
+}
+
+.about__btn {
+  margin-top: rem(50);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.about__drawing {
+  @include mq(md){
+    max-width: calc(194 / 1440 * 100%);
+    overflow: hidden;
+    position: absolute;
+    bottom: rem(-90);
+    right: calc(56 / 1440 * 100%);
+    width: 100%;
+  }
+}

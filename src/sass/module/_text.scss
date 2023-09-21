@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.text {
+  color: $black;
+  line-height: calc(24 / 16);
+}
+
+.text--wh {
+  @include mq(md){
+    color: $white;
+    display: block;
+  }
+}

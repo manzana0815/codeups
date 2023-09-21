@@ -1,1 +1,74 @@
 @use "global" as *;
+
+.header {
+  background-color: rgba($color:#0D2936, $alpha: 0.68);
+  height: rem(90);
+  transition: all 0.3s;
+}
+
+.header:hover {
+  @include mq(md){
+    background-color: rgba($color:#9a9a9a, $alpha:1);
+    height: rem(165);
+  }
+}
+
+.header.is-open {
+  background-color: $blue;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  padding: 0 rem(15);
+
+  @include mq(md){
+    padding: 0 rem(40);
+  }
+}
+
+.header__site-title {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  max-width: rem(102);
+  width: 100%;
+
+  @include mq(md){
+    max-width: rem(133);
+  }
+}
+
+.header__nav {
+  display: none;
+
+  @include mq(md){
+    display: flex;
+    align-items: center;
+    height: inherit;
+
+  }
+}
+
+.header__drawer {
+  background-color: $blue;
+  display: flex;
+  height: calc(100vh - rem(90));
+  margin: auto;
+  transform: translateX(100%);
+  transition: all 0.3s;
+  width: 100vw;
+}
+
+.header__drawer.is-open {
+  transform: translateX(0);
+}
+
+.header__sp-nav {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 4.2%;
+}
