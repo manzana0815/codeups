@@ -32,6 +32,7 @@
 
 .contact__header {
   padding: 0 rem(25);
+
   @include mq(md) {
     max-width: rem(440);
     padding: 0;
@@ -44,7 +45,7 @@
   padding-bottom: rem(7);
   text-align: center;
 
-  @include mq(md){
+  @include mq(md) {
     padding-bottom: rem(10);
   }
 }
@@ -64,7 +65,8 @@
 }
 
 .contact__info {
-    line-height: calc(24 / 16);
+  font-style: normal;
+  line-height: calc(24 / 16);
   text-align: center;
 
   @include mq(md) {
@@ -116,7 +118,7 @@
   }
 }
 
-.contact__title > .section-title__jp {
+.contact__title>.section-title__jp {
   display: block;
   margin-top: rem(-4);
 }
@@ -136,7 +138,7 @@
 .contact__drawing {
   display: none;
 
-  @include mq(md){
+  @include mq(md) {
     display: block;
     overflow: hidden;
     position: absolute;
