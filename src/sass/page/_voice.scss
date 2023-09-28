@@ -1,21 +1,21 @@
 @use "global" as *;
 
 .voice__cards {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: rem(40);
-  margin-top: rem(40);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  gap: rem(36);
+  margin-top: rem(42);
 
   @include mq(md) {
-    flex-direction: row;
-    justify-content: space-between;
+    gap: rem(40);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: rem(30);
   }
 }
 
 .voice__btn {
-  margin-top: rem(40);
+  margin-top: rem(41);
   text-align: center;
 
   @include mq(md) {
@@ -24,24 +24,29 @@
 }
 
 .voice__drawing--top {
+  display: none;
+
   @include mq(md) {
-    max-width: calc(301 / 1440 * 100%);
+    display: block;
     overflow: hidden;
     position: absolute;
-    top: rem(-120);
-    left: calc(100 / 1440 * 100%);
-    width: 100%;
+    top: -19%;
+    left: calc(100 / 1440 * 100vw);
+    width: rem(301);
   }
 }
 
 .voice__drawing--bottom {
+  display: none;
+
   @include mq(md) {
-    max-width: calc(71 / 1440 * 100%);
+    display: block;
     overflow: hidden;
     position: absolute;
-    bottom: rem(-60);
-    right: calc(145 / 1440 * 100%);
-    width: 100%;
+    bottom: -11.5%;
+    right: calc(180 / 1440 * 100vw);
+    width: rem(71);
+
   }
 
 }

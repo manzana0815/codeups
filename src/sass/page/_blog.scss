@@ -1,21 +1,24 @@
 @use "global" as *;
 
-
 .blog {
+  padding-top: rem(84);
+  position: relative;
+
   @include mq(md){
     background-image: url("../images/common/bg-blog.jpg");
     background-position: top center;
-    background-size: 100vw 60.168472%;
+    background-size: 100vw 60.5%;
     background-repeat: no-repeat;
-
+    padding-top: rem(102);
   }
 }
+
 .blog__cards {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: rem(40);
-  margin-top: rem(24);
+  margin-top: rem(28);
 
 
   @include mq(md){
@@ -35,12 +38,14 @@
 }
 
 .blog__drawing {
+  display: none;
+
   @include mq(md){
-    max-width: calc(437 / 1440 * 100%);
+    display: block;
     overflow: hidden;
     position: absolute;
-    top: rem(24);
-    left: calc(100 / 1440 * 100%);
-    width: 100%;
+    top: 3%;
+    left: calc(100 / 1440 * 100vw);
+    width: rem(437);
   }
 }

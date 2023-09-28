@@ -1,33 +1,45 @@
 @use "global" as *;
 
 .to-top {
-  background-color: $white;
-  border: 1px solid $blue;
-  border-radius: 50%;
-  box-shadow: 0 4px 4px 0 rgba($color: #000, $alpha: 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: rem(80);
-  overflow: hidden;
-  position: fixed;
-  right: rem(16);
-  bottom: rem(20);
-  width: rem(80);
-  z-index: 100;
-}
-
-.to-top:hover {
-  transform: scale(1.1);
+  position: relative;
 }
 
 .to-top a {
-  cursor: pointer;
+  background-color: $white;
+  border: 1px solid $blue;
+  border-radius: 50%;
   display: block;
-  height: 100%;
-  width: 100%;
+  height: rem(48);
+  position: fixed;
+  bottom: rem(16);
+  right: rem(16);
+  width: rem(48);
+  z-index: 100;
+
+  @include mq(md){
+    height: rem(80);
+    bottom: rem(20);
+    right: rem(20);
+    width: rem(80);
+  }
 }
 
-.to-top a .arrow--bl {
-  transform: rotate(270deg);
+.to-top span {
+  background-image: url("../images/common/arrow_to-top.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: rem(28);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem(6);
+
+  @include mq(md){
+
+    height: rem(40);
+    width: rem(8);
+  }
 }

@@ -24,10 +24,17 @@
   width: 100%;
 }
 
+.card__body {
+  width: 100%;
+}
 
 .card__header {
   padding: rem(16) rem(16) 0;
   text-align: left;
+
+  @include mq(md) {
+    padding: rem(24) rem(16) 0;
+  }
 }
 
 .card__title {
@@ -38,34 +45,65 @@
   padding-bottom: rem(8);
 }
 
+.card__category {
+  border: 1px solid $blue;
+  color: $blue;
+  display: inline-block;
+  font-size: rem(12);
+  line-height: calc(22 / 12);
+  padding: rem(3) rem(11);
+
+  @include mq(md) {
+    padding: rem(5) rem(15);
+  }
+}
+
 .card__content {
   flex-grow: 1;
-  margin-top: rem(8);
+  margin-top: rem(5);
   padding: 0 rem(16) rem(24);
   text-align: center;
 
-  @include mq(md){
+  @include mq(md) {
     margin-top: rem(16);
+    padding: 0 rem(16) rem(40);
   }
 }
 
 .card__text {
   font-size: rem(14);
+  line-height: calc(24 / 14);
+
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
 }
 
 .card__price {
   font-family: $price-font;
   font-weight: $bold;
+  line-height: 1;
   margin-top: rem(8);
 }
 
 .card__price--regular {
   font-size: rem(20);
   text-decoration: line-through solid #C94800 3px;
+
+  @include mq(md) {
+    font-size: rem(24);
+  }
 }
+
 .card__price--discounted {
   color: $blue;
   font-size: rem(32);
-  margin-left: rem(8);
+  margin-left: rem(16);
+
+  @include mq(md) {
+    font-size: rem(40);
+    margin-left: rem(24);
+  }
 
 }

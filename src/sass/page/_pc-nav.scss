@@ -32,9 +32,9 @@
   padding-right: 0;
 }
 
-
 .pc-nav__title {
-  padding: rem(4) 0;
+  height: inheit;
+  padding-bottom: rem(4);
   position: relative;
   text-align: center;
 }
@@ -61,7 +61,7 @@
   display: block;
   font-family: $english-font;
   font-size: rem(18);
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .pc-nav__title--en::first-letter {
@@ -71,4 +71,5 @@
 .pc-nav__title--jp {
   display: block;
   font-size: rem(10);
+  line-height: 1.5;
 }

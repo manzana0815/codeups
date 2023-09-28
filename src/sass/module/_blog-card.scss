@@ -9,23 +9,23 @@
 }
 
 .blog-card__img {
-  aspect-ratio: 301 / 201;
   overflow: hidden;
 }
 
 .blog-card__img img {
+  aspect-ratio: 301 / 201;
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
 
 .blog-card__body {
-  margin-top: rem(24);
+  margin-top: rem(16);
 }
 
 .blog-card__header {
   border-bottom: 1px solid $blue;
-  padding-bottom: rem(8);
+  padding-bottom: rem(5);
 }
 
 .blog-card__time {
@@ -36,4 +36,16 @@
 .blog-card__title {
   font-size: rem(16);
   font-weight: $medium;
+}
+
+.blog-card__content {
+  margin-top: rem(16);
+}
+
+.blog__btn {
+  margin-top: rem(40);
+
+  @include mq(md){
+    margin-top: rem(80);
+  }
 }

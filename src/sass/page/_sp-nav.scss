@@ -3,7 +3,6 @@
 .sp-nav__left {
   @include mq(md){
     display: flex;
-    flex-wrap: wrap;
     gap: rem(120);
   }
 }
@@ -11,32 +10,39 @@
 .sp-nav__right {
   @include mq(md){
     display: flex;
-    flex-wrap: wrap;
     gap: rem(120);
   }
 }
 
-.sp-nav__items {
-  display: flex;
-  flex-direction: column;
+.sp-nav__items:nth-child(even) {
+  margin-top: rem(40);
+
+  @include mq(md){
+    margin-top: 0;
+  }
+}
+.sp-nav__item:nth-child(even) {
+  margin-top: rem(40);
 }
 
 .sp-nav__item {
   display: flex;
   flex-direction: column;
 }
+.sp-nav__item:not(:first-child) {
+  margin-top: rem(40);
+}
 
-.sp-nav__link {
+.sp-nav__item > a {
   color: $white;
+  display: block;
   font-weight: $bold;
   line-height: calc(18 / 16);
-  padding-top: rem(20);
-  padding-bottom: rem(20);
   padding-left: 1.375em;
   position: relative;
 }
 
-.sp-nav__link::before {
+.sp-nav__item > a::before {
   content: "";
   background-image: url("../images/common/seastar.png");
   background-position: center;
@@ -54,14 +60,14 @@
 
 .sp-nav__sub-links {
   color: $white;
-  margin-left: 1.375em;
 }
 
 .sp-nav__sub-link {
-  padding: rem(12) 0;
+  margin-top: rem(24);
 }
 
-.sp-nav__sub-link a {
+.sp-nav__sub-link > a {
   display: block;
   line-height: calc(18 / 16);
+  padding-left: 1.375em;
 }

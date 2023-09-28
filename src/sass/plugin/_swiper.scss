@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .swiper-slide img {
@@ -21,3 +22,82 @@
   height: 100%;
   object-fit: cover;
 }
+
+.swiper-button {
+  display: none;
+
+  @include mq(md){
+    display: flex;
+    align-items: center;
+    gap: rem(120);
+    height: rem(80);
+    margin: auto;
+    max-width: rem(240);
+    position: absolute;
+    top: rem(-26);
+    right: calc(181 / 1440 * 100%);
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: rem(80);
+  position: relative;
+  width: rem(80);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  // SPでは非表示
+  display: none;
+
+  @include mq(md){
+    // デフォルトのcontent:"prev", "next";を無効にする
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    display: block;
+    bottom: initial;
+    height: rem(80);
+    margin: auto;
+    position: absolute;
+    top: initial;
+    width: rem(80);
+  }
+}
+
+.swiper-button-prev::after {
+
+  @include mq(md) {
+    background-image: url("../images/common/arrow_left.png");
+  }
+}
+
+
+.swiper-button-next::after {
+
+  @include mq(md) {
+    background-image: url("../images/common/arrow_right.png");
+  }
+}
+
+// .swiper-button-prev {
+//   display: none;
+
+//   @include mq(md) {
+//     content: "";
+//     display: inline-block;
+//     margin: 0 rem(40);
+//     position: absolute;
+//     top: rem(-105);
+//     left: initial;
+//     right: rem(300);
+//     vertical-align: bottom;
+//   }
+
+// }

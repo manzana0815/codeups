@@ -2,8 +2,12 @@
 
 .header {
   background-color: rgba($color:#0D2936, $alpha: 0.68);
-  height: rem(90);
+  height: rem(80);
   transition: all 0.3s;
+
+  @include mq(md){
+    height: rem(90);
+  }
 }
 
 .header:hover {
@@ -55,14 +59,16 @@
 .header__drawer {
   background-color: $blue;
   display: flex;
-  height: calc(100vh - rem(90));
+  height: calc(100vh - rem(80));
   margin: auto;
+  min-height: rem(160);
   transform: translateX(100%);
   transition: all 0.3s;
   width: 100vw;
 }
 
 .header__drawer.is-open {
+
   transform: translateX(0);
 }
 
@@ -70,5 +76,6 @@
   display: flex;
   align-items: start;
   justify-content: center;
-  gap: 4.2%;
+  gap: 2.153846%;
+  margin-top: rem(24);
 }

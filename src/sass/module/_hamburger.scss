@@ -23,22 +23,22 @@ $drawer-width: rem(32);
   position: absolute;
   left: 0;
   right: 0;
-  top: calc((100% - $drawer-height) / 2);
   top: 50%;
+  transform: translateY(-50%);
   transition: ease 0.3s;
   width: $drawer-width;
 }
 
 .hamburger span:nth-child(1) {
-  transform: translateY(rem(-10));
+  transform: translateY(rem(-13));
 }
 
 .hamburger span:nth-child(3) {
-  transform: translateY(rem(10));
+  transform: translateY(rem(11));
 }
 
 .hamburger.is-open span:nth-child(1) {
-  transform: rotate(36.87deg);
+  transform: rotate(36.87deg) scale(1.25);;
 }
 
 .hamburger.is-open span:nth-child(2) {
@@ -46,5 +46,5 @@ $drawer-width: rem(32);
 }
 
 .hamburger.is-open span:nth-child(3) {
-  transform: rotate(-36.87deg);
+  transform: rotate(-36.87deg) scale(1.25);
 }
