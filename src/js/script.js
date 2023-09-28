@@ -1,15 +1,24 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
-  // HBG　＆　DRAWER
+  // ハンバーガーメニュー ＆ ドロワーメニュー
   $(".js-hamburger").on("click", function () {
     $(".header").toggleClass("is-open")
     $(".hamburger").toggleClass("is-open");
     $(".header__drawer").toggleClass("is-open");
     $("body").toggleClass("is-open")
-
   });
 
-  //MV-SWIPER
+  // ドロワーメニューを開いた状態で画面幅を拡大したらドロワーメニューを閉じる
+  $(window).resize(function () {
+    if ($(window).width() >= 768) {
+      $(".header").removeClass("is-open");
+      $(".hamburger").removeClass("is-open");
+      $(".header__drawer").removeClass("is-open");
+      $("body").css("overflow", "auto");
+    }
+  });
+
+  //メインビュースワイパー
   var mvSwiper = new Swiper(".js-mv-swiper", {
     autoplay: {
       delay: 4000,
@@ -21,9 +30,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     speed: 2000, // ２秒かけながら次の画像へ移動
   });
 
-  // CAMPAIGNーSWIPER
-
-  // swiper
+  // キャンペーンスワイパー
   var windowSize = $(window).width();
   var space = 24;
   if (windowSize < 376) {
@@ -33,7 +40,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   }
   var swiper = new Swiper(".js-campaign-swiper", {
     autoplay: {
-      delay: 5000, // 2秒後にスライド
+      delay: 5000, // 5秒後にスライド
       disableOnInteraction: false, // 手動スライド後も自動再生を止めない
     },
     loop: true, // ループ有効
@@ -41,15 +48,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     slidesPerView: "auto",
     spaceBetween: space,
   });
 
-  // COLORーBOX
+  //カラーボックス＋画像
   //要素の取得とスピードの設定
   var box = $('.js-color-box'),
     speed = 700;
@@ -76,22 +79,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
   });
 
-
-  document.querySelector('.to-top').addEventListener('click', function () {
+  // トップへ戻るボタン
+  document.querySelector('.js-to-top').addEventListener('click', function () {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   });
 
-  $(window).resize(function () {
-    if ($(window).width() >= 768) {
-      $(".header").removeClass("is-open");
-      $(".hamburger").removeClass("is-open");
-      $(".header__drawer").removeClass("is-open");
-      $("body").css("overflow", "auto");
-    }
-  });
   var topBtn = $('.js-to-top');
   topBtn.hide();
   //スクロールが100に達したらボタン表示

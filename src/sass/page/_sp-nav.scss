@@ -58,15 +58,15 @@
   width: 1.125em;
 }
 
-.sp-nav__sub-links {
+.sp-nav__sub-items {
   color: $white;
 }
 
-.sp-nav__sub-link {
+.sp-nav__sub-item {
   margin-top: rem(24);
 }
 
-.sp-nav__sub-link > a {
+.sp-nav__sub-item > a {
   display: block;
   line-height: calc(18 / 16);
   padding-left: 1.375em;

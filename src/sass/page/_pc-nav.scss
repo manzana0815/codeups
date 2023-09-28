@@ -32,14 +32,14 @@
   padding-right: 0;
 }
 
-.pc-nav__title {
+.pc-nav__link {
   height: inheit;
   padding-bottom: rem(4);
   position: relative;
   text-align: center;
 }
 
-.pc-nav__title::after {
+.pc-nav__link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -53,22 +53,22 @@
   transform-origin: center top;
 }
 
-.pc-nav__item a:hover .pc-nav__title::after {
+.pc-nav__item a:hover .pc-nav__link::after {
   transform: scale(1, 1);
 }
 
-.pc-nav__title--en {
+.pc-nav__link--en {
   display: block;
   font-family: $english-font;
   font-size: rem(18);
   line-height: 1.5;
 }
 
-.pc-nav__title--en::first-letter {
+.pc-nav__link--en::first-letter {
   text-transform: uppercase;
 }
 
-.pc-nav__title--jp {
+.pc-nav__link--jp {
   display: block;
   font-size: rem(10);
   line-height: 1.5;
