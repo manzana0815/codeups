@@ -17,7 +17,7 @@
 .price__wrapper {
   display: flex;
   flex-direction: column;
-  gap: rem(36);
+  gap: rem(38);
   margin-top: rem(29);
 
   @include mq(md) {
