@@ -19,7 +19,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 
   //メインビュースワイパー
-  var mvSwiper = new Swiper(".js-mv-swiper", {
+  var mvSwiper = new Swiper(".js-top-mv-swiper", {
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,
@@ -38,7 +38,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   } else {
     space = 40;
   }
-  var swiper = new Swiper(".js-campaign-swiper", {
+  var swiper = new Swiper(".js-top-campaign-swiper", {
     autoplay: {
       delay: 5000, // 5秒後にスライド
       disableOnInteraction: false, // 手動スライド後も自動再生を止めない
@@ -97,6 +97,26 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     } else {
       //ボタンの非表示方法
       topBtn.fadeOut();
+    }
+  });
+
+  // フッター手前でストップ
+  $(window).on("scroll", function () {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    var footHeight = $("footer").innerHeight();
+    var bottomOffset = "16px"; // ボタンのデフォルト位置
+    if (scrollHeight - scrollPosition <= footHeight) {
+      // ページトップボタンがフッター手前に来たらpositionをfixedからabsoluteに変更
+      $(".to-top").css({
+        position: "absolute",
+        bottom: footHeight - bottomOffset, // フッターの上に配置
+      });
+    } else {
+      $(".to-top").css({
+        position: "fixed",
+        bottom: bottomOffset, // 画面下に固定
+      });
     }
   });
 });

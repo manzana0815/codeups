@@ -3,9 +3,20 @@
 .blog-card {
   background-color: $white;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
-  max-width: rem(333);
+  max-width: rem(650);
   padding: rem(16) rem(16) rem(24);
   width: 100%;
+
+  @include mq(md){
+    max-width: rem(333);
+
+  }
+}
+
+.blog-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blog-card__img {

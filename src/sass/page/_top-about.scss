@@ -1,29 +1,29 @@
 @use "global" as *;
 
-.about {
+.top-about__inner {
   position: relative;
 }
 
-.about__images {
+.top-about__images {
   margin-top: rem(58);
   position: relative;
 
   @include mq(md) {
-    margin-top: rem(120);
+    margin-top: rem(124);
   }
 }
 
-.about__img {
+.top-about__img {
   overflow: hidden;
 }
 
-.about__img img {
+.top-about__img img {
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
 
-.about__img--left {
+.top-about__img--left {
   width: calc(128 / 345 * 100%);
   overflow: hidden;
   position: absolute;
@@ -34,12 +34,12 @@
   }
 }
 
-.about__img--right {
+.top-about__img--right {
   margin-left: auto;
   width: calc(281 / 345 * 100%);
 }
 
-.about__contents {
+.top-about__contents {
   margin-top: rem(40);
 
   @include mq(md) {
@@ -49,14 +49,14 @@
     margin-left: calc(251 / 1440 * 100%);
     max-width: rem(840);
     position: absolute;
-    top: 39.5%;
+    top: 40%;
     text-shadow: 0 4px 4px rgba($color: #000, $alpha: 0.25);
     width: 100%;
     z-index: 5;
   }
 }
 
-.about__contents-title {
+.top-about__contents-title {
   color: $blue;
   font-family: $english-font;
   font-size: rem(40);
@@ -72,14 +72,14 @@
   }
 }
 
-.about__content {
+.top-about__content {
   @include mq(md) {
     max-width: rem(400);
     width: 100%;
   }
 }
 
-.about__text {
+.top-about__text {
   line-height: calc(24 / 16);
   margin-top: rem(16);
 
@@ -89,7 +89,7 @@
 
 }
 
-.about__btn {
+.top-about__btn {
   margin-top: rem(26);
   text-align: center;
 
@@ -98,7 +98,7 @@
   }
 }
 
-.about__drawing {
+.top-about__drawing {
   display: none;
 
   @include mq(md) {
@@ -106,7 +106,8 @@
     overflow: hidden;
     position: absolute;
     bottom: -12%;
-    right: calc(83 / 1440 * 100vw);
+    right: calc(50% - min(34vw, rem(446)));
+    transform: translateX(100%);
     width: rem(194);
 
   }

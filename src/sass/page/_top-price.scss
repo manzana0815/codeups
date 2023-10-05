@@ -1,20 +1,22 @@
 @use "global" as *;
 
-.price {
+.top-price {
   background-color: $l-blue;
   padding-top: rem(84);
   padding-bottom: rem(82);
-  position: relative;
 
   @include mq(md) {
-    padding-top: rem(102);
+    padding-top: rem(101);
     padding-bottom: rem(104);
 
   }
 }
 
+.top-price__inner {
+  position: relative;
+}
 
-.price__wrapper {
+.top-price__wrapper {
   display: flex;
   flex-direction: column;
   gap: rem(38);
@@ -23,14 +25,14 @@
   @include mq(md) {
     flex-direction: row-reverse;
     justify-content: space-between;
-    gap: 0;
-    margin-top: rem(38);
+    gap: 6.458333%;
+    margin-top: rem(43);
   }
 }
 
-.price__img {
+.top-price__img {
   margin: auto;
-  max-width: rem(345);
+  max-width: rem(650);
   overflow: hidden;
   width: 100%;
 
@@ -40,7 +42,7 @@
   }
 }
 
-.price__img img {
+.top-price__img img {
   aspect-ratio: 345 / 227;
   height: 100%;
   object-fit: cover;
@@ -52,18 +54,18 @@
   }
 }
 
-.price__table {
+.top-price__table {
   @include mq(md){
     max-width: rem(492);
     width: 100%;
   }
 }
 
-.price__list-items:not(:first-child) {
+.top-price__list-items:not(:first-child) {
   margin-top: rem(40);
 }
 
-.price__list-title {
+.top-price__list-title {
   border-bottom: 1px solid $blue;
   border-radius: 1px;
   font-size: rem(16);
@@ -72,9 +74,10 @@
 
 }
 
-.price__list-item {
+.top-price__list-item {
   display: flex;
   align-items: center;
+  gap: 0.5em;
   justify-content: space-between;
   font-size: rem(14);
   line-height: calc(24 / 14);
@@ -87,7 +90,7 @@
 }
 
 
-.price__btn {
+.top-price__btn {
   margin-top: rem(40);
   text-align: center;
 
@@ -96,15 +99,15 @@
   }
 }
 
-.price__drawing {
+.top-price__drawing {
   display: none;
 
   @include mq(md){
     display: block;
     overflow: hidden;
     position: absolute;
-    bottom: 5%;
-    left: calc(100.8 / 1440 * 100vw);
+    bottom: -4.5%;
+    left: calc(50% - min(75vw, rem(620)));
     width: rem(437);
   }
 }

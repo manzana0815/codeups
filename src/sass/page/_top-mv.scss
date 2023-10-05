@@ -1,22 +1,22 @@
 @use "global" as *;
 
-.mv {
+.top-mv {
   height: 100vh;
   position: relative;
   width: 100%;
 }
 
-.mv__img {
+.top-mv__img {
   height: 100vh;
 }
 
-.mv__img img {
+.top-mv__img img {
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
 
-.mv__title-block {
+.top-mv__title-block {
   color: $white;
   position: absolute;
   top: 50%;
@@ -26,7 +26,7 @@
   z-index: 5;
 }
 
-.mv__title {
+.top-mv__title {
   text-shadow: 0 4px 4px rgba($color: #000, $alpha: 0.25);
   color: $white;
   font-family: $price-font;
@@ -43,24 +43,24 @@
   }
 }
 
-.mv__subtitle {
+.top-mv__subtitle {
   font-family: $english-font;
   font-size: rem(20);
 }
 
-.mv .swiper {
+.top-mv .swiper {
   height: 100vh;
   width: 100%;
 }
 
-.mv .swiper-slide {
+.top-mv .swiper-slide {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.mv .swiper-slide img {
+.top-mv .swiper-slide img {
   display: block;
   height: 100vh;
   width: 100vw;

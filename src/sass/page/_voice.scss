@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.voice__inner {
+  position: relative;
+}
+
 .voice__cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -10,7 +14,8 @@
   @include mq(md) {
     gap: rem(40);
     grid-template-columns: repeat(2, 1fr);
-    margin-top: rem(30);
+    place-items: initial;
+    margin-top: rem(34);
   }
 }
 
@@ -31,7 +36,8 @@
     overflow: hidden;
     position: absolute;
     top: -19%;
-    left: calc(100 / 1440 * 100vw);
+    left: calc(50% - min(75vw, 57.5rem));
+    transform: translateX(100%);
     width: rem(301);
   }
 }
@@ -44,7 +50,8 @@
     overflow: hidden;
     position: absolute;
     bottom: -11.5%;
-    right: calc(180 / 1440 * 100vw);
+    right: calc(50% - min(40vw, 29.5rem));
+    transform: translateX(100%);
     width: rem(71);
 
   }

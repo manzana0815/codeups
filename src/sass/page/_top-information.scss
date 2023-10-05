@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.information {
+.top-information {
   background-color: $l-blue;
   padding-top: rem(82);
   padding-bottom: rem(85);
@@ -12,7 +12,7 @@
   }
 }
 
-.information__wrapper {
+.top-information__wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -20,11 +20,11 @@
 
   @include mq(md){
     flex-direction: row;
-    margin-top: rem(38);
+    margin-top: rem(44);
   }
 }
 
-.information__img {
+.top-information__img {
   overflow: hidden;
 
   @include mq(md){
@@ -33,7 +33,7 @@
   }
 }
 
-.information__img img {
+.top-information__img img {
   aspect-ratio: 345 / 227;
   height: 100%;
   object-fit: cover;
@@ -44,7 +44,7 @@
   }
 }
 
-.information__content {
+.top-information__content {
   margin-top: rem(24);
 
   @include mq(md){
@@ -54,7 +54,7 @@
     width: 100%;
   }
 }
-.information__content-title {
+.top-information__content-title {
   border-bottom: 1px solid $blue;
   font-size: rem(20);
   line-height: calc(24 / 20);
@@ -67,11 +67,11 @@
   }
 }
 
-.information__text {
+.top-information__text {
   margin-top: rem(8);
 }
 
-.information__btn {
+.top-information__btn {
   margin-top: rem(40);
   text-align: center;
 

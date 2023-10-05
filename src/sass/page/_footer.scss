@@ -59,6 +59,7 @@ footer {
 .footer__nav {
   display: flex;
   gap: rem(16);
+  justify-content: center;
   margin: rem(38) auto 0;
 
   @include mq(md) {
