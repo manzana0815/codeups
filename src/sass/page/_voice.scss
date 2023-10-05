@@ -1,10 +1,10 @@
 @use "global" as *;
 
-.voice__inner {
+.top-voice__inner {
   position: relative;
 }
 
-.voice__cards {
+.top-voice__cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   place-items: center;
@@ -19,7 +19,7 @@
   }
 }
 
-.voice__btn {
+.top-voice__btn {
   margin-top: rem(41);
   text-align: center;
 
@@ -28,7 +28,7 @@
   }
 }
 
-.voice__drawing--top {
+.top-voice__drawing--top {
   display: none;
 
   @include mq(md) {
@@ -41,7 +41,7 @@
   }
 }
 
-.voice__drawing--bottom {
+.top-voice__drawing--bottom {
   display: none;
 
   @include mq(md) {
