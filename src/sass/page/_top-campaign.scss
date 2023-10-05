@@ -2,7 +2,12 @@
 
 .top-campaign {
   overflow: hidden;
+  padding-top: rem(45);
   position: relative;
+
+  @include mq(md){
+    padding-top: rem(120);
+  }
 }
 
 .top-campaign__inner {
@@ -22,7 +27,7 @@
   margin-right: calc(50% - 50vw);
 
   @include mq(md) {
-    margin-top: rem(46);
+    margin-top: rem(44);
   }
 }
 
