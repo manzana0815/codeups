@@ -5,7 +5,7 @@
 }
 
 .top-about__images {
-  margin-top: rem(58);
+  margin-top: rem(63);
   position: relative;
 
   @include mq(md) {
@@ -40,7 +40,7 @@
 }
 
 .top-about__contents {
-  margin-top: rem(40);
+  margin-top: rem(38);
 
   @include mq(md) {
     display: flex;
@@ -90,7 +90,7 @@
 }
 
 .top-about__btn {
-  margin-top: rem(26);
+  margin-top: rem(23);
   text-align: center;
 
   @include mq(md) {

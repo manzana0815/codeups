@@ -2,7 +2,7 @@
 
 .top-information {
   background-color: $l-blue;
-  padding-top: rem(82);
+  padding-top: rem(85);
   padding-bottom: rem(85);
 
   @include mq(md){
@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: rem(28);
+  margin-top: rem(32);
 
   @include mq(md){
     flex-direction: row;

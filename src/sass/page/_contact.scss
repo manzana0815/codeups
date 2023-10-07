@@ -10,6 +10,10 @@
   }
 }
 
+.contact__inner {
+  position: relative;
+}
+
 .contact__wrapper {
   @include mq(md) {
     box-shadow: 4px 4px 10px 0 rgba($color: #000, $alpha: 0.25);
@@ -118,7 +122,7 @@
   }
 }
 
-.contact__title>.section-title__jp {
+.contact__title > .section-title__jp {
   display: block;
   margin-top: rem(-4);
 }
@@ -136,12 +140,14 @@
 }
 
 .contact__drawing {
-  display: none;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: max(calc(109 / 375 * 100vw), rem(109));
+  top: -4%;
+  right: 4%;
 
-  @include mq(md) {
-    display: block;
-    overflow: hidden;
-    position: absolute;
+  @include mq(md){
     top: -8%;
     right: calc(50% - min(47vw, rem(671)));
     width: rem(301);
