@@ -10,13 +10,6 @@
   }
 }
 
-.header:hover {
-  @include mq(md){
-    background-color: rgba($color:#9a9a9a, $alpha:1);
-    height: rem(165);
-  }
-}
-
 .header.is-open {
   background-color: $blue;
 }
@@ -61,7 +54,7 @@
   display: flex;
   height: calc(100vh - rem(80));
   margin: auto;
-  min-height: rem(160);
+  overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.3s;
   width: 100vw;
@@ -73,10 +66,8 @@
 
 .header__sp-nav {
   display: flex;
-  align-items: start;
   justify-content: center;
   gap: 2.153846%;
-  height: 100%;
+  max-height: 100%;
   margin-top: rem(24);
-  overflow-y: auto;
 }

@@ -3,17 +3,7 @@
 
 .swiper {
   width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  height: auto;
 }
 
 .swiper-slide img {
@@ -29,13 +19,12 @@
   @include mq(md){
     display: flex;
     align-items: center;
-    gap: rem(120);
+    gap: rem(80);
     height: rem(80);
-    margin: auto;
     max-width: rem(240);
     position: absolute;
-    top: 11%;
-    right: calc(181 / 1440 * 100%);
+    top: 0;
+    right: calc(50% - rem(540));
     width: 100%;
     z-index: 100;
   }
@@ -44,10 +33,15 @@
 
 .swiper-button-prev,
 .swiper-button-next {
+  display: inline-block;
   height: rem(80);
+  margin-top: 0;
   position: relative;
+  top: 0;
+  left: 0;
   width: rem(80);
 }
+
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -59,15 +53,12 @@
     content: "";
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     cursor: pointer;
-    display: block;
-    bottom: initial;
-    height: rem(80);
-    margin: auto;
+    display: inline-block;
+    height: 100%;
     position: absolute;
-    top: initial;
-    width: rem(80);
+    width: 100%;
   }
 }
 
@@ -85,19 +76,3 @@
     background-image: url("../images/common/arrow_right.png");
   }
 }
-
-// .swiper-button-prev {
-//   display: none;
-
-//   @include mq(md) {
-//     content: "";
-//     display: inline-block;
-//     margin: 0 rem(40);
-//     position: absolute;
-//     top: rem(-105);
-//     left: initial;
-//     right: rem(300);
-//     vertical-align: bottom;
-//   }
-
-// }

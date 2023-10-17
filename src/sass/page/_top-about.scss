@@ -5,7 +5,7 @@
 }
 
 .top-about__images {
-  margin-top: rem(63);
+  margin-top: rem(62);
   position: relative;
 
   @include mq(md) {
@@ -106,7 +106,7 @@
     overflow: hidden;
     position: absolute;
     bottom: -12%;
-    right: calc(50% - min(45vw, rem(637)));
+    right: calc(50% - min(48vw, rem(637)));
     width: rem(194);
 
   }

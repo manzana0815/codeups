@@ -19,7 +19,7 @@
   justify-content: center;
   flex-direction: column;
   height: inherit;
-  padding: 0 rem(20);
+  padding: 0 calc(20 / 1440 * 100vw);
   text-shadow: 0 4px 4px rgba($color: #000, $alpha: 0.25);
 
 }

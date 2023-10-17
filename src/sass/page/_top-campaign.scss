@@ -2,11 +2,12 @@
 
 .top-campaign {
   overflow: hidden;
-  padding-top: rem(45);
+  margin-top: rem(45);
+  padding-bottom: rem(6);
   position: relative;
 
-  @include mq(md){
-    padding-top: rem(120);
+  @include mq(md) {
+    margin-top: rem(120);
   }
 }
 
@@ -16,7 +17,7 @@
   padding: 0 rem(15);
   width: 100%;
 
-  @include mq(md){
+  @include mq(md) {
     padding: 0 rem(25);
 
   }
@@ -27,15 +28,12 @@
   margin-right: calc(50% - 50vw);
 
   @include mq(md) {
-    margin-top: rem(44);
+    margin-top: rem(46);
   }
 }
 
-.top-campaign__swiper {
-  width: 100%;
-}
-
 .top-campaign__cards {
+  display: flex;
   padding-bottom: rem(10);
   padding-left: rem(4);
 }
@@ -45,6 +43,6 @@
   text-align: center;
 
   @include mq(md) {
-    margin-top: rem(70);
+    margin-top: rem(69);
   }
 }

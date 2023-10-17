@@ -1,7 +1,12 @@
 @use "global" as *;
 
 .top-blog {
+  padding-top: rem(84);
   position: relative;
+
+  @include mq(md) {
+    padding-top: rem(102);
+  }
 }
 
 .top-blog__bg {
@@ -23,12 +28,8 @@
 }
 
 .top-blog__inner {
-  padding-top: rem(84);
   position: relative;
 
-  @include mq(md) {
-    padding-top: rem(102);
-  }
 
 }
 
@@ -44,7 +45,8 @@
   @include mq(md) {
     grid-template-columns: repeat(3, 1fr);
     place-items: initial;
-    margin-top: rem(84);
+    padding: 0;
+    margin-top: rem(85);
   }
 }
 
@@ -64,8 +66,8 @@
     display: block;
     overflow: hidden;
     position: absolute;
-    top: 3%;
-    left: calc(50% - min(43vw, rem(624)));
+    top: -11%;
+    left: calc(50% - min(48vw, rem(621)));
     width: rem(437);
   }
 }

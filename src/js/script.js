@@ -38,6 +38,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   } else {
     space = 40;
   }
+  
   var swiper = new Swiper(".js-top-campaign-swiper", {
     autoplay: {
       delay: 5000, // 5秒後にスライド

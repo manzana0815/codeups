@@ -5,6 +5,7 @@
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  height: auto;
   max-width: rem(280);
   width: 100%;
 
@@ -14,35 +15,27 @@
 }
 
 .card__img {
+  aspect-ratio: 280 / 188;
   overflow: hidden;
+
+  @include mq(md){
+    aspect-ratio: 333 / 223;
+
+  }
 }
 
 .card__img img {
-  aspect-ratio: 280 / 188;
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
 
 .card__body {
-  width: 100%;
-}
-
-.card__header {
   padding: rem(16) rem(16) 0;
-  text-align: left;
 
   @include mq(md) {
     padding: rem(24) rem(16) 0;
   }
-}
-
-.card__title {
-  border-bottom: 1px solid $blue;
-  font-size: rem(16);
-  font-weight: $medium;
-  margin-top: rem(4);
-  padding-bottom: rem(8);
 }
 
 .card__category {
@@ -58,14 +51,20 @@
   }
 }
 
+.card__title {
+  border-bottom: 1px solid $blue;
+  font-size: rem(16);
+  font-weight: $medium;
+  margin-top: rem(4);
+  padding-bottom: rem(8);
+}
+
 .card__content {
-  flex-grow: 1;
-  margin-top: rem(5);
+  margin-top: auto;
   padding: 0 rem(16) rem(24);
   text-align: center;
 
   @include mq(md) {
-    margin-top: rem(16);
     padding: 0 rem(16) rem(40);
   }
 }
@@ -73,18 +72,26 @@
 .card__text {
   font-size: rem(14);
   line-height: calc(24 / 14);
+  margin-top: rem(8);
+  text-align: center;
 
   @include mq(md) {
     font-size: rem(16);
+    margin-top: rem(16);
     line-height: calc(24 / 16);
   }
 }
 
 .card__price {
+  display: flex;
+  align-items: baseline;
+  gap: rem(16);
+  justify-content: center;
   font-family: $price-font;
   font-weight: $bold;
   line-height: 1;
   margin-top: rem(8);
+
 }
 
 .card__price--regular {
@@ -99,11 +106,8 @@
 .card__price--discounted {
   color: $blue;
   font-size: rem(32);
-  margin-left: rem(16);
 
   @include mq(md) {
     font-size: rem(40);
-    margin-left: rem(24);
   }
-
 }

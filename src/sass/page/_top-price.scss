@@ -26,7 +26,7 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     gap: 6.458333%;
-    margin-top: rem(43);
+    margin-top: rem(45);
   }
 }
 
@@ -106,8 +106,8 @@
     display: block;
     overflow: hidden;
     position: absolute;
-    bottom: -4.5%;
-    left: calc(50% - min(49vw, rem(620)));
+    bottom: -4%;
+    left: calc(50% - min(48vw, rem(620)));
     width: rem(437);
   }
 }
