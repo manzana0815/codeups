@@ -1,0 +1,121 @@
+@use "global" as *;
+
+
+.campaign-body {
+  position: relative;
+}
+
+.campaign-body__categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(16) rem(21);
+  margin: auto;
+  place-items: center;
+  position: relative;
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    gap: 0 rem(32);
+  }
+
+}
+
+.campaign-body__category {
+  border: 1px solid $blue;
+  color: $blue;
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  max-width: rem(162);
+  padding: rem(6) rem(20);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.current.campaign-body__category {
+  background-color: $blue;
+  color: $white;
+}
+
+
+.campaign-body__cards {
+  margin-top: rem(40);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(40);
+  padding: 0 rem(32);
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(80) rem(40);
+    padding: 0;
+  }
+}
+
+.campaign-body .card {
+  max-width: rem(520);
+
+  @include mq(md) {}
+
+}
+
+.campaign-body__detail {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.campaign-body__text {
+  margin-top: rem(24);
+  text-align: left;
+}
+
+.campaign-body__info {
+  margin-top: rem(32);
+}
+
+.campaign-body__date {
+  color: $blue;
+  display: block;
+  font-family: $price-font;
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+}
+
+.campaign-body__link {
+  color: $blue;
+  display: block;
+  font-size: rem(14);
+  line-height: calc(18 / 14);
+  margin-top: rem(7);
+}
+
+.campaign-body__btn {
+  margin-top: rem(16);
+}
+
+.campaign-body__pagination {
+  margin-top: rem(80);
+  max-width: rem(344);
+  width: 100%;
+
+  @include mq(md){
+    max-width: rem(444);
+    width: 100%;
+  }
+}
+
+.campaign-body__drawing {
+  max-width: rem(301);
+  position: absolute;
+  top: -4%;
+  left: calc(50% - min(48vw, rem(620)));
+  width: 100%;
+  z-index: -10;
+}

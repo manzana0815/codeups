@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.breadcrumb {
+  padding: rem(8) 0;
+}
+
+.breadcrumb span {
+  color: $black;
+  font-size: rem(14);
+  text-transform: uppercase;
+}
