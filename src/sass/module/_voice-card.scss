@@ -40,24 +40,10 @@
   font-size: rem(12);
 }
 
-.voice-card__category {
-  border: 1px solid $blue;
-  color: $blue;
-  display: inline-block;
-  font-size: rem(12);
-  line-height: calc(22 / 12);
-  padding: rem(2.5) rem(11);
-
-  @include mq(md) {
-    padding: rem(5) rem(15);
-  }
-}
-
 .voice-card__title {
   border-bottom: 1px solid $blue;
   font-size: rem(16);
   font-weight: $medium;
-  margin-top: rem(2);
   padding-bottom: rem(3);
 
   @include mq(md) {
@@ -88,6 +74,13 @@
   @include mq(md) {
     aspect-ratio: 180 / 140;
 
+  }
+}
+
+.voice-card__category.category {
+  @include mq(md){
+    max-width: rem(128);
+    padding: rem(6) rem(14);
   }
 }
 

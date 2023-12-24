@@ -1,0 +1,125 @@
+@use "global" as *;
+
+.top-price {
+  background-color: $l-blue;
+  padding-top: rem(84);
+  padding-bottom: rem(82);
+  position: relative;
+
+  @include mq(md) {
+    padding-top: rem(101);
+    padding-bottom: rem(104);
+
+  }
+}
+
+.top-price::before {
+  display: none;
+
+  @include mq(md) {
+    content: "";
+    background-image: url("../images/common/fish-to-left_green.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: rem(181);
+    overflow: hidden;
+    position: absolute;
+    bottom: -4%;
+    left: calc(50% - min(48vw, rem(620)));
+    max-width: rem(437);
+    width: 100%;
+  }
+}
+
+.top-price .inner {
+  max-width: rem(600);
+
+  @include mq(md){
+    max-width: rem(1130);
+  }
+}
+
+.top-price__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(38);
+  margin-top: rem(34);
+
+  @include mq(md) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 6.458333%;
+    margin-top: rem(45);
+  }
+}
+
+.top-price__img {
+  margin: auto;
+  max-width: rem(650);
+  overflow: hidden;
+  width: 100%;
+
+  @include mq(md) {
+    margin: 0;
+    max-width: rem(492);
+  }
+}
+
+.top-price__img img {
+  aspect-ratio: 345 / 227;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+
+  @include mq(md) {
+    aspect-ratio: 492 / 746;
+
+  }
+}
+
+.top-price__table {
+  @include mq(md) {
+    max-width: rem(492);
+    width: 100%;
+  }
+}
+
+.top-price__list-items:not(:first-child) {
+  margin-top: rem(40);
+}
+
+.top-price__list-title {
+  border-bottom: 1px solid $blue;
+  border-radius: 1px;
+  font-size: rem(16);
+  font-weight: $bold;
+  padding-bottom: rem(4);
+
+}
+
+.top-price__list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: space-between;
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+  margin-top: rem(8);
+
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+
+
+.top-price__btn {
+  margin-top: rem(40);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: rem(82);
+  }
+}

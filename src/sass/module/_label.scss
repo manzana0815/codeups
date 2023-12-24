@@ -1,0 +1,12 @@
+@use "global" as *;
+
+.required {
+  background-color: #C94800;
+  color: $white;
+  display: inline-block;
+  font-size: rem(12);
+  letter-spacing: 0.3em;
+  max-width: rem(61);
+  padding: rem(2) rem(12);
+  text-indent: 0.3em;
+}

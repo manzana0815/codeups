@@ -1,1 +1,28 @@
+@use "global" as *;
 
+.category {
+  border: 1px solid $blue;
+  color: $blue;
+  display: inline-block;
+  font-size: rem(12);
+  line-height: calc(22 / 12);
+  padding: rem(3) rem(11);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+
+}
+
+.category.category--lg {
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  max-width: rem(163);
+  padding: rem(6) rem(20);
+  width: 100%;
+
+}
+
+.category.is-active {
+  background-color: $blue;
+  color: $white;
+}

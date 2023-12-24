@@ -1,0 +1,74 @@
+@use "global" as *;
+
+
+.aside {
+  margin: 0 auto;
+  max-width: rem(600);
+  width: 85.217391%;
+
+  @include mq(md) {
+    max-width: rem(294);
+    width: 100%;
+  }
+}
+
+.aside__reputation {
+  margin-top: rem(84);
+}
+
+.aside__campaign {
+  margin-top: rem(84);
+  width: 100%;
+}
+
+.aside__campaign-cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: rem(23);
+  gap: rem(38);
+
+}
+
+.aside__campaign-card .campaign-card__img {
+  aspect-ratio: 294 / 188;
+}
+
+.aside__campaign-card .campaign-card__body {
+  padding: rem(16) rem(23) 0;
+  text-align: center;
+
+  @include mq(md){
+    padding: rem(14) rem(23) 0;
+  }
+}
+
+.aside__campaign-card .campaign-card__text {
+  @include mq(md){
+    font-size: rem(14);
+    margin-top: 0;
+  }
+}
+
+.aside__campaign-card .campaign-card__price-regular {
+  @include mq(md){
+    font-size: rem(20);
+  }
+}
+
+.aside__campaign-card .campaign-card__price-discounted {
+  @include mq(md){
+    font-size: rem(32);
+  }
+}
+
+.aside__campaign-btn {
+  margin-top: rem(42);
+  text-align: center;
+
+}
+
+
+.aside__archive {
+  margin-top: rem(84);
+}

@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.breadcrumbs {
+  color: $black;
+  font-size: rem(14);
+  padding: rem(6) 0;
+}
+
+.breadcrumbs a,
+.breadcrumbs span {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a:hover {
+  opacity: .7;
+  transition: .3s ease;
+}
+
+.breadcrumbs span:not(:first-child) {
+  margin-left: rem(18);
+  position: relative;
+
+}
+
+.breadcrumbs span:not(:first-child)::before {
+  content: "";
+  border-top: 1px solid $black;
+  border-right: 1px solid $black;
+  display: inline-block;
+  height: rem(7);
+  position: absolute;
+  top: 50%;
+  left: rem(-18);
+  transform: rotate(45deg) translateY(-50%);
+  width: rem(7);
+
+}
+
+.breadcrumbs--wh span {
+  color: $white;
+}
+
+.breadcrumbs--wh span:not(:first-child)::before {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+
+}

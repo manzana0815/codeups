@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.aside-title {
+  border-left: 8px solid $blue;
+  max-width: rem(294);
+  width: 100%;
+}
+
+.aside-title span {
+  font-size: rem(24);
+  font-weight: $regular;
+  display: inline-block;
+  padding-top: rem(8);
+  padding-left: rem(76);
+  padding-bottom: rem(5);
+  position: relative;
+}
+
+
+.aside-title span::before {
+    content: "";
+    background-image: url("../images/common/whale_black.svg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: rem(50);
+    position: absolute;
+    top: 50%;
+    left: rem(15);
+    transform: translateY(-50%);
+    vertical-align: middle;
+    width: rem(50);
+}

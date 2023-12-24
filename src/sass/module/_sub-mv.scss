@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.sub-mv {
+  position: relative;
+}
+
+.sub-mv__img {
+  height: rem(460);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include mq(md){
+    height: rem(548);
+  }
+}
+
+.sub-mv__img::before {
+  content: "";
+  background-color: $blue;
+  height: 100%;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sub-mv__img img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.sub-mv__title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+
+  @include mq(md){
+    top: 59%;
+  }
+}

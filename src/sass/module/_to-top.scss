@@ -1,10 +1,11 @@
 @use "global" as *;
 
 .to-top {
+  display: none;
   position: fixed;
   bottom: rem(16);
   right: rem(16);
-  transition: bottom 0.3s ease;
+  transition: opacity 0.3s ease;
   z-index: 100;
 
   @include mq(md){
@@ -16,10 +17,10 @@
 
 .to-top a {
   background-color: $white;
-  border: 1px solid $blue;
   border-radius: 50%;
   display: block;
   height: rem(48);
+  position: relative;
   width: rem(48);
 
   @include mq(md){
@@ -28,22 +29,26 @@
   }
 }
 
-.to-top span {
-  background-image: url("../images/common/arrow_to-top.png");
-  background-position: top center;
+.to-top a:hover {
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.to-top a::before {
+  content: "";
+  background-image: url("../images/common/arrow-right.svg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: block;
-  height: rem(28);
+  cursor: pointer;
+  display: inline-block;
+  height: rem(48);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: rem(6);
+  transform: rotate(-90deg);
+  width: rem(48);
 
   @include mq(md){
-
-    height: rem(40);
-    width: rem(8);
+    height: rem(80);
+    width: rem(80);
   }
 }

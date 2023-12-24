@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.faq {
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  background-image: url("../images/common/fish-to-right_green.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: rem(55);
+  position: absolute;
+  top: rem(-25);
+  left: calc(50% - min(46vw, rem(619)));
+  width: rem(120);
+  z-index: 1;
+
+  @include mq(md){
+    top: rem(-70);
+    height: rem(138);
+    width: rem(301);
+    z-index: -1;
+  }
+}
+
+.faq .inner {
+  max-width: rem(600);
+
+  @include mq(md){
+    max-width: rem(1130);
+  }
+}
+
+.faq__wrapper {
+  margin: 0 auto;
+  max-width: rem(700);
+  width: 100%;
+}

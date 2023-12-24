@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.sub-contact-area-layout {
+  margin-top: rem(103);
+  position: relative;
+
+  @include mq(md) {
+    margin-top: rem(138);
+  }
+}
+
+
+.sub-contact-area-faq-layout {
+  margin-top: rem(103);
+
+  @include mq(md){
+    margin-top: rem(138);
+  }
+}
+
+.sub-contact-area-policy-layout {
+  margin-top: rem(103);
+
+  @include mq(md){
+    margin-top: rem(136);
+  }
+}
+
+.sub-contact-area-terms-layout {
+  margin-top: rem(103);
+
+  @include mq(md){
+    margin-top: rem(136);
+  }
+}

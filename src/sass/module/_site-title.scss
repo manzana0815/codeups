@@ -4,9 +4,18 @@
   display: flex;
   align-items: center;
   height: inherit;
+  transition: 0.3s ease;
+  position: relative;
+  z-index: 99;
 }
 
-.site-title__logo img {
+.site-title__logo:hover {
+  opacity: .7;
+  transition: 0.3s ease;
+}
+
+
+.site-title__logo {
   max-width: rem(102);
   width: 100%;
 
@@ -23,10 +32,10 @@
   }
 }
 
-.site-title__logo--lg img{
+.site-title__logo--lg{
   height: rem(65);
   max-width: rem(174);
-  text-align: center;
+  margin: auto;
   width: 100%;
 
   @include mq(md){

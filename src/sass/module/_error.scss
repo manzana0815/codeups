@@ -1,0 +1,64 @@
+@use "global" as *;
+
+.error {
+  position: relative;
+  text-align: center;
+
+  @include mq(md){
+  }
+}
+
+.error::before {
+  content: "";
+  background-image: url("../images/common/whale_black-error.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: rem(293);
+  max-width: rem(328);
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  @include mq(md){
+    height: calc(594 / 1440 * 100vw);
+    max-width: calc(665 / 1440 * 100vw);
+    top: 48%;
+    left: calc(50% - min(rem(190), 30vw));
+  }
+}
+
+.error__title {
+  color: $white;
+  font-family: $price-font;
+  font-size: rem(80);
+  font-weight: $regular;
+  letter-spacing: 0.5em;
+  line-height: 1;
+  text-align: center;
+  text-indent: 0.5em;
+
+  @include mq(md){
+    font-size: rem(160);
+  }
+}
+
+.error__text {
+  color: $white;
+  text-align: center;
+
+  @include mq(md){
+    margin-top: rem(40);
+  }
+}
+
+.error__btn {
+  margin-top: rem(42);
+  text-align: center;
+
+  @include mq(md){
+    margin-top: rem(80);
+  }
+}

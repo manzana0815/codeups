@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.drawer {
+  background-color: $blue;
+  height: 100%;
+  margin: auto;
+  overflow-y: auto;
+  padding-bottom: rem(104);
+  position: fixed;
+  top: rem(80);
+  right: -100%; /* メニューを画面外に配置 */
+  transition: right 0.3s ease;
+  width: 100%;
+  z-index: 999;
+}
+
+.drawer.is-open {
+  right: 0;
+}
+
+.drawer__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.153846%;
+  margin-top: rem(24);
+}

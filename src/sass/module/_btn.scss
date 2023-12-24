@@ -27,7 +27,7 @@
 }
 
 .btn span {
-  background-image: url("../images/common/arrow_white.png");
+  background-image: url("../images/common/arrow-right_white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -40,7 +40,7 @@
 }
 
 .btn:hover span {
-  background-image: url("../images/common/arrow_green.png");
+  background-image: url("../images/common/arrow-right_green.svg");
 }
 
 .btn::before {
@@ -70,5 +70,58 @@
   top: 5px;
   left: 5px;
   width: 100%;
+}
+
+
+.btn--wh {
+  background-color: $white;
+  border: 1px solid $white;
+  color: $blue;
+  padding: rem(16) rem(36);
+}
+
+.btn--wh:hover {
+  color: $white;
+}
+
+.btn--wh span {
+  background-image: url("../images/common/arrow-right_green.svg");
+}
+
+.btn--wh:hover span {
+  background-image: url("../images/common/arrow-right_white.svg");
+}
+
+.btn--wh::before {
+  background-color: $blue;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.btn--wh:hover::before {
+  transform: scale(1, 1);
+}
+
+.btn--wh::after {
+  content: "";
+  background-color: transparent;
+  border: 1px solid $white;
+  height: 100%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
   z-index: -10;
+}
+
+.btn-wrapper {
+  position: relative;
 }

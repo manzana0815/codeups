@@ -1,0 +1,101 @@
+@use "global" as *;
+
+.tab {
+  background-color: $l-blue;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: rem(300);
+  padding: rem(9) rem(4) rem(8);
+  text-align: center;
+  transition: 0.3s ease;
+  width: 100%;
+
+  @include mq(md){
+    padding: rem(16) rem(4) rem(8);
+  }
+}
+
+.tab:hover {
+  background-color: $blue;
+}
+
+.tab span {
+  color: $blue;
+  font-size: rem(14);
+
+  @include mq(md){
+    font-size: rem(24);
+  }
+}
+
+.tab:hover span {
+  color: $white;
+  transition: .3s ease;
+}
+
+.tab.current {
+  background-color: $blue;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.tab.current span {
+  color: $white;
+}
+
+.tab span::before {
+  display: none;
+
+  @include mq(md){
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: rem(64);
+    margin-right: rem(8);
+    transition: .3s ease;
+    vertical-align: middle;
+    width: rem(64);
+  }
+}
+
+.tab:nth-child(1) span::before {
+  @include mq(md){
+    background-image: url("../images/common/whale_green.svg");
+  }
+}
+
+.tab:nth-child(2) span::before {
+  @include mq(md){
+    background-image: url("../images/common/shark_green.svg");
+  }
+}
+.tab:nth-child(3) span::before {
+  @include mq(md){
+    background-image: url("../images/common/fish_green.svg");
+  }
+}
+
+.tab:nth-child(1):hover span::before,
+.tab:nth-child(1).current span::before {
+  @include mq(md){
+    background-image: url("../images/common/whale_white.svg");
+  }
+}
+
+.tab:nth-child(2):hover span::before,
+.tab:nth-child(2).current span::before {
+  @include mq(md){
+    background-image: url("../images/common/shark_white.svg");
+  }
+}
+.tab:nth-child(3):hover span::before,
+.tab:nth-child(3).current span::before {
+  @include mq(md){
+    background-image: url("../images/common/fish_white.svg");
+  }
+}

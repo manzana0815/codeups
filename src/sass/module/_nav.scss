@@ -1,0 +1,92 @@
+@use "global" as *;
+
+.nav {
+  display: flex;
+  gap: rem(16);
+  justify-content: center;
+
+  @include mq(md) {
+    gap: rem(120);
+    justify-content: initial;
+  }
+}
+
+.nav__left {
+  @include mq(md){
+    display: flex;
+    gap: rem(120);
+  }
+}
+
+.nav__right {
+  @include mq(md){
+    display: flex;
+    gap: rem(120);
+  }
+}
+
+.nav__items:nth-child(even) {
+  margin-top: rem(40);
+
+  @include mq(md){
+    margin-top: 0;
+  }
+}
+
+.nav__item:nth-child(even) {
+  margin-top: rem(40);
+}
+
+.nav__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__item:not(:first-child) {
+  margin-top: rem(40);
+}
+
+.nav__item > a {
+  color: $white;
+  display: block;
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  padding-left: 1.375em;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav__item > a::before {
+  content: "";
+  background-image: url("../images/common/seastar.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 1.125em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  vertical-align: bottom;
+  width: 1.125em;
+}
+
+.nav__item a:hover {
+  opacity: .7;
+  transition: 0.3s ease;
+}
+
+.nav__sub-items {
+  color: $white;
+}
+
+.nav__sub-item {
+  margin-top: rem(24);
+}
+
+.nav__sub-item > a {
+  display: block;
+  line-height: calc(18 / 16);
+  padding-left: 1.375em;
+}

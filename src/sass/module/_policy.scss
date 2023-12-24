@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.policy {
+  position: relative;
+}
+
+.policy::before {
+  content: "";
+  background-image: url("../images/common/fish-to-right_green.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: rem(55);
+  position: absolute;
+  top: rem(-25);
+  left: calc(50% - min(46vw, rem(619)));
+  width: rem(120);
+  z-index: 1;
+
+  @include mq(md){
+    top: rem(-70);
+    height: rem(138);
+    width: rem(301);
+    z-index: -1;
+  }
+}
+
+.policy .inner {
+  max-width: rem(600);
+
+  @include mq(md){
+    max-width: rem(1130);
+  }
+}
+
+.policy__title {
+  font-size: rem(24);
+  font-weight: $medium;
+
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.policy__content {
+  margin-top: rem(40);
+  line-height: calc(32 / 16);
+}
+
+.policy__text {
+  line-break: strict;
+}
+
+.policy__text:not(:first-child) {
+  margin-top: calc(rem(16) * calc(32 / 16));
+}
+
+.policy__list-items {
+  margin-top: calc(rem(16) * calc(32 / 16));
+  margin-left: rem(20);
+  list-style: decimal;
+  list-style-position: outside;
+}
+
+
+.policy__list-item {
+  letter-spacing: 0.01em;
+  line-break: strict;
+}

@@ -1,5 +1,8 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
+  // ------------------
+  // HAMBURGER & DRAWER
+  // ------------------
   // ハンバーガーメニュー ＆ ドロワーメニュー
   $(".js-hamburger").on("click", function () {
     $(".header").toggleClass("is-open")
@@ -14,10 +17,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       $(".header").removeClass("is-open");
       $(".hamburger").removeClass("is-open");
       $(".header__drawer").removeClass("is-open");
-      $("body").css("overflow", "auto");
+      $("body").removeClass("is-open");
     }
   });
 
+
+  // ------------------
+  // SWIPER
+  // ------------------
   //メインビュースワイパー
   var mvSwiper = new Swiper(".js-top-mv-swiper", {
     autoplay: {
@@ -53,6 +60,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     spaceBetween: space,
   });
 
+
+
+
+  // ------------------
+  // COLOR-BOX
+  // ------------------
   //カラーボックス＋画像
   //要素の取得とスピードの設定
   var box = $('.js-color-box'),
@@ -80,44 +93,210 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
   });
 
-  // トップへ戻るボタン
-  document.querySelector('.js-to-top').addEventListener('click', function () {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+
+  // ------------------
+  // TO-TOP
+  // ------------------
+  $(function () {
+    var $toTop = $('.to-top');
+    var fvHeight = $(window).width() > 767 ? 548 : 460; // PCは548px、SPは460px
+
+    $(window).scroll(function () {
+      var scrollPos = $(this).scrollTop();
+      var windowHeight = $(window).height();
+      var documentHeight = $(document).height();
+      var footerHeight = $('footer').innerHeight();
+
+      var isPastFV = scrollPos > fvHeight;
+      var isAboveFooter = (documentHeight - scrollPos - windowHeight) > footerHeight;
+
+      if (isPastFV && isAboveFooter) {
+        $toTop.fadeIn();
+      } else {
+        $toTop.fadeOut();
+      }
+    });
+
+    $toTop.click(function () {
+      $('body, html').animate({ scrollTop: 0 }, 300);
+      return false;
     });
   });
 
-  var topBtn = $('.js-to-top');
-  topBtn.hide();
-  //スクロールが100に達したらボタン表示
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      //ボタンの表示方法
-      topBtn.fadeIn();
-    } else {
-      //ボタンの非表示方法
-      topBtn.fadeOut();
-    }
+  // ------------------
+  // MODAL
+  // ------------------
+// モーダル要素を取得
+const modal = document.querySelector(".js-modal");
+
+if (modal) {
+  // モーダルコンテンツのクリックイベントが外側に伝播しないようにする
+  const modalContent = modal.querySelector('.modal__content');
+  if (modalContent) {
+    modalContent.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  }
+
+  // モーダルを表示する関数
+  function openModal(imageSrc, caption) {
+    const modalImage = modal.querySelector(".js-modal-img");
+    const modalWebpImage = modal.querySelector(".js-modal-webp-img");
+
+    modalImage.src = imageSrc;
+    modalWebpImage.srcset = imageSrc.replace(".jpg", ".webp");
+
+    modal.classList.add('show');
+
+    // 背景ページのスクロールを無効にする
+    document.body.style.overflow = 'hidden';
+  }
+
+  // モーダルを閉じる関数
+  function closeModal() {
+    modal.classList.remove('show');
+
+    // 背景ページのスクロールを有効にする
+    document.body.style.overflow = '';
+  }
+
+  // モーダルトリガーのイベントリスナーを設定
+  const modalTriggerElements = document.querySelectorAll(".js-modal-trigger");
+  modalTriggerElements.forEach(function (element) {
+    element.addEventListener("click", function () {
+      const imageSrc = element.getAttribute("data-src");
+      const caption = element.getAttribute("data-caption");
+      openModal(imageSrc, caption);
+    });
   });
 
-  // フッター手前でストップ
-  $(window).on("scroll", function () {
-    var scrollHeight = $(document).height();
-    var scrollPosition = $(window).height() + $(window).scrollTop();
-    var footHeight = $("footer").innerHeight();
-    var bottomOffset = "16px"; // ボタンのデフォルト位置
-    if (scrollHeight - scrollPosition <= footHeight) {
-      // ページトップボタンがフッター手前に来たらpositionをfixedからabsoluteに変更
-      $(".to-top").css({
-        position: "absolute",
-        bottom: footHeight - bottomOffset, // フッターの上に配置
-      });
-    } else {
-      $(".to-top").css({
-        position: "fixed",
-        bottom: bottomOffset, // 画面下に固定
-      });
+  // モーダルの外側をクリックした際に閉じるイベントリスナーを設定
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
     }
   });
+}
+
+
+
+  // ------------------
+  // TAB
+  // ------------------
+  $(function () {
+    // タブのリストとコンテンツセットを変数にセット
+    var tabList = $('.js-tab-list li'),
+      tabSet = $('.js-tab-set');
+
+    // 最初のタブとコンテンツをアクティブにする
+    tabList.first().addClass('current');
+    tabSet.hide();
+    tabSet.first().show();
+
+    // タブをクリックしたら関連するコンテンツを表示する
+    tabList.click(function () {
+      var index = $(this).index();
+
+      tabList.removeClass('current');
+      $(this).addClass('current');
+      tabSet.hide();
+      tabSet.eq(index).fadeIn();
+    });
+  });
+
+  // ------------------
+  // BLOG-CARD:HOVER
+  // ------------------
+  // .blog-card要素をすべて取得
+  const blogCards = document.querySelectorAll('.js-hover-scale');
+
+  // 各.blog-card要素に対してループ処理
+  blogCards.forEach(blogCard => {
+    // img要素を取得
+    const imgElement = blogCard.querySelector('img');
+
+    // マウスが要素に乗ったときの処理
+    blogCard.addEventListener('mouseenter', () => {
+      // img要素を1.1倍に拡大するアニメーションを設定
+      imgElement.style.transition = 'transform 0.3s';
+      imgElement.style.transform = 'scale(1.1)';
+    });
+
+    // マウスが要素から離れたときの処理
+    blogCard.addEventListener('mouseleave', () => {
+      // img要素を元のサイズに戻すアニメーションを設定
+      imgElement.style.transition = 'transform 0.3s';
+      imgElement.style.transform = 'scale(1)';
+    });
+  });
+
+
+  document.querySelectorAll('.js-collapse').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      button.classList.toggle('active');
+      content.classList.toggle('show');
+    });
+  });
+  // ------------------
+  // ACCORDION
+  // ------------------
+  $(function () {
+    // タイトルをクリックすると
+    $(".js-accordion-title").on("click", function () {
+      // クリックした次の要素を開閉
+      $(this).next().slideToggle(300);
+      // タイトルにopenクラスを付け外しして矢印の向きを変更
+      $(this).toggleClass("active", 300);
+    });
+  });
+
+
+  // ------------------
+  // ADDRESS BAR
+  // ------------------
+  $(window).on("load resize", function () {
+    let window_height = window.innerHeight
+      ? window.innerHeight
+      : $(window).innerHeight();
+    $(".wrap").css("min-height", window_height + "px");
+  });
+});
+
+
+
+// ------------------
+// CONTACT FORM
+// ------------------
+// DOMが完全に読み込まれた後に実行
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('form');
+
+  // formが存在する場合のみ、以下のコードを実行
+  if (form) {
+    var submitButton = document.querySelector('.js-submit');
+    var errorText = document.querySelector('.contact__error-text');
+    var requiredFields = form.querySelectorAll('input[required], textarea[required], select[required]');
+
+    submitButton.addEventListener('click', function (event) {
+      var isAnyFieldEmpty = false;
+      errorText.classList.remove('empty');
+
+      requiredFields.forEach(function (field) {
+        if (field.value.trim() === '') {
+          field.classList.add('empty');
+          isAnyFieldEmpty = true;
+        } else {
+          field.classList.remove('empty');
+        }
+      });
+
+      if (isAnyFieldEmpty) {
+        event.preventDefault();
+        errorText.classList.add('empty');
+      }
+    });
+  } else {
+    console.log('The form element with id "form" was not found.');
+  }
 });

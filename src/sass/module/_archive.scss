@@ -1,0 +1,71 @@
+@use "global" as *;
+
+.archive__items {
+  list-style-type: none;
+  margin-top: rem(26);
+}
+
+.archive__item + .archive__item {
+  margin-top: rem(4);
+}
+
+.archive__year {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block; /* 矢印を消す */
+  font-size: rem(24);
+  outline: none;
+  position: relative;
+  text-align: left;
+}
+
+.archive__year::-webkit-details-marker {
+  display: none; /* 矢印を消す */
+}
+
+.archive__year,
+.archive__month a {
+  color: $blue;
+  font-size: rem(24);
+  font-weight: $regular;
+  list-style: none;
+  padding-left: rem(30);
+  position: relative;
+  transition: 0.5s ease;
+}
+
+
+.archive__year::before,
+.archive__month a::before {
+  content: "";
+  border-style: solid;
+  border-width: rem(10) 0 rem(10) rem(18);
+  border-color: transparent transparent transparent $blue;
+  display: inline-block;
+  height: 0;
+  margin-right: rem(12);
+  position: absolute;
+  top: 50%;
+  left: rem(3);
+  transform: translateY(-50%);
+  transition: 0.5s ease;
+  vertical-align: middle;
+  width: 0;
+}
+
+.archive__year.active::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.archive__months {
+  display: none;
+  list-style-type: none;
+  text-indent: 1.6875em;
+  transition: all 0.5s ease-out;
+}
+
+.archive__months.show {
+  display: block;
+  transition: 0.5s ease;
+}

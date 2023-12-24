@@ -1,0 +1,59 @@
+@use "global" as *;
+
+.sitemap {
+  position: relative;
+}
+
+.sitemap::before {
+  content: "";
+  background-image: url("../images/common/fish-to-right_green.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: rem(55);
+  position: absolute;
+  top: rem(-23);
+  left: calc(50% - min(46vw, rem(619)));
+  width: rem(120);
+  z-index: 1;
+
+  @include mq(md){
+    top: rem(-70);
+    height: rem(138);
+    width: rem(301);
+    z-index: -1;
+  }
+}
+.sitemap .inner {
+  max-width: rem(600);
+
+  @include mq(md){
+    max-width: rem(1130);
+  }
+}
+
+.sitemap__nav.nav {
+  gap: rem(28);
+  @include mq(md){
+    gap: rem(144);
+  }
+}
+
+.sitemap__nav .nav__left {
+  @include mq(md){
+    gap: rem(146);
+  }
+}
+
+.sitemap__nav .nav__right {
+  @include mq(md){
+    gap: rem(140);
+  }
+}
+.sitemap__nav .nav__item a {
+  color: $black;
+}
+
+.sitemap__nav .nav__item > a::before {
+  background-image: url("../images/common/seastar-blk.png");
+}

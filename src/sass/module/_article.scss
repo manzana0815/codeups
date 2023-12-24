@@ -1,0 +1,59 @@
+@use "global" as *;
+
+.article__cards {
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(23);
+}
+
+
+.article__card a {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  gap: rem(16);
+  max-width: rem(650);
+  padding: rem(16);
+  width: 100%;
+
+  @include mq(md){
+    max-width: rem(294);
+  }
+}
+
+.article__img {
+  aspect-ratio: 121 / 90;
+  overflow: hidden;
+  width: 100%;
+  @include mq(md){
+    max-width: rem(121);
+  }
+}
+
+.article__img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.article__content {
+  width: 100%;
+  @include mq(md){
+    max-width: rem(125);
+  }
+}
+
+.article__date {
+  display: block;
+  font-family: $english-font;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1;
+}
+
+.article__card-title {
+  font-size: rem(16);
+  font-weight: $regular;
+  margin-top: rem(8);
+}

@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.sub-title__title {
+  color: $white;
+  font-family: $price-font;
+  font-weight: $regular;
+  font-size: rem(40);
+
+  @include mq(md){
+    font-size: rem(80);
+      line-height: calc(100 / 80);
+  }
+}
+.sub-title__title::first-letter {
+  text-transform: uppercase;
+}
+
+.sub-title__title.sub-title__title--capital {
+  text-transform: uppercase;
+}
+
+.sub-title__title span {
+  text-transform: capitalize;
+}

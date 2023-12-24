@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.thanks {
+  position: relative;
+  text-align: center;
+}
+
+.thanks::before {
+  content: "";
+  background-image: url("../images/common/fish-to-right_green.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: calc(55 / 375 * 100vw);
+  max-width: rem(120);
+  position: absolute;
+  top: rem(-25);
+  left: calc(50% - min(46vw, rem(619)));
+  width: 100%;
+  z-index: 1;
+
+  @include mq(md) {
+    top: rem(-70);
+    height: calc(138 / 1440 * 100vw);
+    max-width: rem(301);
+    z-index: -1;
+  }
+}
+
+.thanks .inner {
+  max-width: rem(600);
+
+  @include mq(md) {
+    max-width: rem(1130);
+  }
+}
+
+.thanks__title {
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: calc(18 / 16);
+}
+
+.thanks__text {
+  margin-top: rem(40);
+  font-size: rem(16);
+  font-weight: $regular;
+  line-height: 1.5;
+}

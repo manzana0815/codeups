@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrap--gr {
+  background-color: $blue;
+  padding-top: rem(80);
+
+  @include mq(md){
+    padding-top: rem(90);
+  }
+}

@@ -19,11 +19,11 @@
   <meta property="og:description" content="" />
   <!-- ファビコン -->
   <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <!-- css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -36,169 +36,169 @@
 </head>
 
 <body id="top">
-  <!-- ヘッダー -->
   <header class="header header-layout">
     <div class="header__inner">
       <div class="header__site-title site-title">
         <a href="index.html" class="site-title__logo">
-          <img src="./assets/images/common/logo.svg" alt="CodeUps">
+          <img src="./assets/images/common/logo.svg" alt="CodeUps" />
         </a>
       </div>
+
       <!-- PC用ナビメニュー -->
-      <nav class="header__nav pc-nav">
+      <nav class="header__pc-nav pc-nav">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="#top-campaign">
+            <a href="./campaign.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">campaign</span>
-                <span class="pc-nav__link--jp">キャンペーン</span>
+                <span class="pc-nav__link-en">campaign</span>
+                <span class="pc-nav__link-jp">キャンペーン</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#top-about">
+            <a href="./about.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">about us</span>
-                <span class="pc-nav__link--jp">私たちについて</span>
+                <span class="pc-nav__link-en">about us</span>
+                <span class="pc-nav__link-jp">私たちについて</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#information">
+            <a href="./info.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">information</span>
-                <span class="pc-nav__link--jp">ダイビング情報</span>
+                <span class="pc-nav__link-en">information</span>
+                <span class="pc-nav__link-jp">ダイビング情報</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#top-blog">
+            <a href="./blog.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">blog</span>
-                <span class="pc-nav__link--jp">ブログ</span>
+                <span class="pc-nav__link-en">blog</span>
+                <span class="pc-nav__link-jp">ブログ</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#top-voice">
+            <a href="./voice.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">voice</span>
-                <span class="pc-nav__link--jp">お客様の声</span>
+                <span class="pc-nav__link-en">voice</span>
+                <span class="pc-nav__link-jp">お客様の声</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#top-price">
+            <a href="./price.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">price</span>
-                <span class="pc-nav__link--jp">料金一覧</span>
+                <span class="pc-nav__link-en">price</span>
+                <span class="pc-nav__link-jp">料金一覧</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#">
+            <a href="./faq.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">FAQ</span>
-                <span class="pc-nav__link--jp">よくある質問</span>
+                <span class="pc-nav__link-en">FAQ</span>
+                <span class="pc-nav__link-jp">よくある質問</span>
               </div>
             </a>
           </li>
           <li class="pc-nav__item">
-            <a href="#contact">
+            <a href="./contact.html">
               <div class="pc-nav__link">
-                <span class="pc-nav__link--en">contact</span>
-                <span class="pc-nav__link--jp">お問合せ</span>
+                <span class="pc-nav__link-en">contact</span>
+                <span class="pc-nav__link-jp">お問い合わせ</span>
               </div>
             </a>
           </li>
         </ul>
       </nav>
+
       <!-- SP用ハンバーガーメニュー -->
       <button class="header__hamburger hamburger js-hamburger">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
     </div>
-    <!-- SP用ドロワーメニュー -->
-    <div class="header__drawer">
-      <div class="inner">
-        <nav class="header__sp-nav sp-nav">
 
-          <div class="sp-nav__left">
-            <ul class="sp-nav__items">
-              <li class="sp-nav__item">
-                <a href="#top-campaign">キャンペーン</a>
-                <ul class="sp-nav__sub-items">
-                  <li class="sp-nav__sub-item">
+    <!-- SP用ドロワーメニュー -->
+    <div class="header__drawer drawer">
+      <div class="drawer__inner inner">
+        <nav class="drawer__nav nav">
+          <div class="nav__left">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="./campaign.html">キャンペーン</a>
+                <ul class="nav__sub-items">
+                  <li class="nav__sub-item">
                     <a href="#">ライセンス取得</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">貸切体験ダイビング</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">ナイトダイビング</a>
                   </li>
                 </ul>
               </li>
-              <li class="sp-nav__item">
-                <a href="#top-about">私たちについて</a>
+              <li class="nav__item">
+                <a href="./about.html">私たちについて</a>
               </li>
             </ul>
-            <ul class="sp-nav__items">
-              <li class="sp-nav__item">
-                <a href="#">ダイビング情報</a>
-                <ul class="sp-nav__sub-items">
-                  <li class="sp-nav__sub-item">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="./info.html">ダイビング情報</a>
+                <ul class="nav__sub-items">
+                  <li class="nav__sub-item">
                     <a href="#">ライセンス講習</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">体験ダイビング</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
-              <li class="sp-nav__item">
-                <a href="#top-blog">ブログ</a>
+              <li class="nav__item">
+                <a href="./blog.html">ブログ</a>
               </li>
             </ul>
           </div>
 
-          <div class="sp-nav__right">
-            <ul class="sp-nav__items">
-              <li class="sp-nav__item">
-                <a href="#top-voice">お客様の声</a>
+          <div class="nav__right">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="./voice.html">お客様の声</a>
               </li>
-              <li class="sp-nav__item">
-                <a href="#top-price">料金一覧</a>
-                <ul class="sp-nav__sub-items">
-                  <li class="sp-nav__sub-item">
+              <li class="nav__item">
+                <a href="./price.html">料金一覧</a>
+                <ul class="nav__sub-items">
+                  <li class="nav__sub-item">
                     <a href="#">ライセンス講習</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">体験ダイビング</a>
                   </li>
-                  <li class="sp-nav__sub-item">
+                  <li class="nav__sub-item">
                     <a href="#">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
             </ul>
-            <ul class="sp-nav__items">
-              <li class="sp-nav__item">
-                <a href="#">よくある質問</a>
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="./faq.html">よくある質問</a>
               </li>
-              <li class="sp-nav__item">
-                <a href="#">プライバシー<br class="u-mobile">ポリシー</a>
+              <li class="nav__item">
+                <a href="./policy.html">プライバシー<br class="u-mobile" />ポリシー</a>
               </li>
-              <li class="sp-nav__item">
-                <a href="#">利用規約</a>
+              <li class="nav__item">
+                <a href="./terms.html">利用規約</a>
               </li>
-              <li class="sp-nav__item">
-                <a href="#contact">お問いわ合せ</a>
+              <li class="nav__item">
+                <a href="./contact.html">お問い合わせ</a>
               </li>
             </ul>
           </div>
@@ -206,272 +206,303 @@
       </div>
     </div>
   </header>
-
-
   <main>
     <!-- ABOUT-MV -->
-    <div class="about-mv">
-      <picture class="about-mv__img">
-        <source srcset="./assets/images/common/about-mv-sp.webp" media="(max-width:767px)" type="image/webp">
-        <source srcset="./assets/images/common/about-mv-pc.webp" media="(min-width:768px)" type="image/webp">
-        <source srcset="./assets/images/common/about-mv-pc.jpg" media="(min-width:768px)" type="image/webp">
-        <img src="./assets/images/common/about-mv-sp.jpg" alt="黄色2匹の熱帯魚の写真">
-      </picture>
+    <div class="sub-mv">
+      <div class="sub-mv__img">
+        <picture>
+          <source srcset="./assets/images/common/about-mv-sp.webp" media="(max-width:767px)" type="image/webp" />
+          <source srcset="./assets/images/common/about-mv-pc.webp" media="(min-width:768px)" type="image/webp" />
+          <source srcset="./assets/images/common/about-mv-pc.jpg" media="(min-width:768px)" type="image/webp" />
+          <img src="./assets/images/common/about-mv-sp.jpg" alt="黄色2匹の熱帯魚の写真" />
+        </picture>
+      </div>
 
-      <div class="about-mv__title-block title-block">
-        <h1 class="about-mv__title title-block__page-title">about us</h1>
+      <div class="sub-mv__title sub-title">
+        <h1 class="sub-title__title">about us</h1>
       </div>
     </div>
 
-    <!-- BREADCRUMB -->
-    <div class="breadcrumb">
-      <div class="inner">
-        <span>top > 私たちについて</span>
+    <!-- BREADCRUMBS -->
+    <div class="breadcrumbs">
+      <div class="breadcrumbs__inner inner">
+        <span><a href="./index.html">top</a></span>
+        <!-- リンクがある場合 -->
+        <span>私たちについて</span>
+        <!-- リンクがない場合 -->
       </div>
     </div>
 
-    <!-- ABOUT-BODY -->
-    <div class="about-body section-layout" id="top-about">
-      <div class="inner">
-        <div class="about-body__images">
-          <div class="about-body__img about-body__img--left">
+    <!-- ABOUT -->
+    <div class="about section-layout">
+      <div class="about__inner inner">
+        <div class="about__images">
+          <div class="about__img-left">
             <picture>
               <!-- ブラウザが767px以下かつwebpに対応している場合 -->
-              <source srcset="./assets/images/common/top-about-sp_01.webp" media="(max-width: 767px)" type="image/webp">
+              <source srcset="./assets/images/common/top-about-sp_01.webp" media="(max-width: 767px)"
+                type="image/webp" />
               <!-- ブラウザが768px以上かつwebpに対応している場合 -->
-              <source srcset="./assets/images/common/top-about-pc_01.webp" media="(min-width: 768px)" type="image/webp">
-              <img src="./assets/images/common/top-about-sp_01.jpg" alt="シーサーの写真">
+              <source srcset="./assets/images/common/top-about-pc_01.webp" media="(min-width: 768px)"
+                type="image/webp" />
+              <img src="./assets/images/common/top-about-sp_01.jpg" alt="シーサーの写真" />
             </picture>
           </div>
 
-          <div class="about-body__img about-body__img--right">
+          <div class="about__img-right">
             <picture>
               <!-- ブラウザが767px以下かつwebpに対応している場合 -->
-              <source srcset="./assets/images/common/top-about-sp_02.webp" media="(max-width: 767px)" type="image/webp">
+              <source srcset="./assets/images/common/top-about-sp_02.webp" media="(max-width: 767px)"
+                type="image/webp" />
               <!-- ブラウザが768px以上かつwebpに対応している場合 -->
-              <source srcset="./assets/images/common/top-about-pc_02.webp" media="(min-width: 768px)" type="image/webp">
-              <img src="./assets/images/common/top-about-sp_02.jpg" alt="黄色の熱帯業の写真">
+              <source srcset="./assets/images/common/top-about-pc_02.webp" media="(min-width: 768px)"
+                type="image/webp" />
+              <img src="./assets/images/common/top-about-sp_02.jpg" alt="黄色の熱帯業の写真" />
             </picture>
           </div>
         </div>
 
-        <div class="about-body__contents">
-          <h3 class="about-body__contents-title">Dive into<br>the Ocean</h3>
-          <div class="about-body__content">
-            <div class="about-body__text">
-              <p class="text text--wh">
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+        <div class="about__contents">
+          <h3 class="about__contents-title">Dive into<br />the Ocean</h3>
+          <div class="about__content">
+            <div class="about__text">
+              <p class="text">
+                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />
                 ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
               </p>
             </div>
-
           </div>
         </div>
-        <div class="about-body__text-box">
-          <p class="text">
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-          </p>
-        </div>
-        <!-- あしらい -->
-        <img src="./assets/images/common/drawing_fish-to-right.png" class="about-body__drawing" alt="珊瑚のイラスト">
       </div>
-
     </div>
 
     <!-- GALLERY -->
-    <section class="about-gallery about-gallery-layout">
-      <div class="inner">
-        <div class="about-gallery__section-title section-title">
+    <section class="gallery gallery-layout">
+      <div class="gallery__inner inner">
+        <div class="gallery__section-title section-title">
           <span class="section-title__en">gallery</span>
           <h2 class="section-title__jp">フォト</h2>
         </div>
-        
-        <div class="about-gallery__container">
-          <div class="about-gallery__wrapper">
-            <picture class="about-gallery__img about-gallery__img01 about-gallery__img--lg">
-              <source srcset="./assets/images/common/about-gallery_01.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_01.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
-            <picture class="about-gallery__img about-gallery__img02">
-              <source srcset="./assets/images/common/about-gallery_02.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_02.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
-            <picture class="about-gallery__img about-gallery__img03">
-              <source srcset="./assets/images/common/about-gallery_03.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_03.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
+
+        <div class="gallery__container">
+          <div class="gallery__wrapper">
+            <!-- 画像をクリックしてモーダルを表示 -->
+            <div class="gallery__img gallery__img--lg gallery__img01 js-modal-trigger"
+              data-src="./assets/images/common/gallery_01.jpg" data-caption="珊瑚礁に群がるカクレクマノミの写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_01.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_01.jpg" alt="珊瑚礁に群がるカクレクマノミの写真" width="492" height="746" />
+              </picture>
+            </div>
+
+            <div class="gallery__img gallery__img02 js-modal-trigger" data-src="./assets/images/common/gallery_02.jpg"
+              data-caption="砂浜ビーチの写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_02.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_02.jpg" alt="砂浜ビーチの写真" />
+              </picture>
+            </div>
+
+            <div class="gallery__img gallery__img03 js-modal-trigger" data-src="./assets/images/common/gallery_03.jpg"
+              data-caption="2匹の熱帯魚の写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_03.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_03.jpg" alt="2匹の熱帯魚の写真" />
+              </picture>
+            </div>
           </div>
 
-          <div class="about-gallery__wrapper about-gallery__wrapper--reverse">
-            <picture class="about-gallery__img about-gallery__img04">
-              <source srcset="./assets/images/common/about-gallery_04.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_04.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
-            <picture class="about-gallery__img about-gallery__img05">
-              <source srcset="./assets/images/common/about-gallery_05.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_05.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
-            <picture class="about-gallery__img about-gallery__img06 about-gallery__img--lg">
-              <source srcset="./assets/images/common/about-gallery_06.webp" type="image/webp">
-              <img src="./assets/images/common/about-gallery_06.jpg" alt="珊瑚礁に群がるカクレクマノミの写真">
-            </picture>
+          <div class="gallery__wrapper gallery__wrapper--reverse">
+            <div class="gallery__img gallery__img04 js-modal-trigger" data-src="./assets/images/common/gallery_04.jpg"
+              data-caption="黄色の熱帯魚の写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_04.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_04.jpg" alt="黄色の熱帯魚の写真" />
+              </picture>
+            </div>
+            <div class="gallery__img gallery__img05 js-modal-trigger" data-src="./assets/images/common/gallery_05.jpg"
+              data-caption="珊瑚礁に群がる魚群の写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_05.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_05.jpg" alt="珊瑚礁に群がる魚群の写真" />
+              </picture>
+            </div>
+            <div class="gallery__img gallery__img--lg gallery__img06 js-modal-trigger"
+              data-src="./assets/images/common/gallery_06.jpg" data-caption="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真">
+              <picture>
+                <source srcset="./assets/images/common/gallery_06.webp" type="image/webp" />
+                <img src="./assets/images/common/gallery_06.jpg" alt="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="gallery__modal modal js-modal">
+        <div class="modal__inner inner">
+          <div class="modal__content">
+            <div class="modal__img">
+              <picture>
+                <source srcset="" type="image/webp" class="js-modal-webp-img" />
+                <img src="" alt="" class="js-modal-img" />
+              </picture>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- //CONTACT -->
-    <section class="contact top-contact-layout" id="contact">
-      <div class=" contact__inner inner">
-        <div class="contact__wrapper">
-          <div class="contact__flex">
-            <div class="contact__header">
-              <div class="contact__site-title site-title">
+
+
+    <!-- CONTACT -->
+    <section class="contact-area sub-contact-area-about-layout">
+      <div class="contact-area__inner inner">
+        <div class="contact-area__wrapper">
+          <div class="contact-area__flex">
+            <div class="contact-area__header">
+              <div class="contact-area__site-title site-title">
                 <a href="index.html" class="site-title__logo site-title__logo--lg">
-                  <img src="./assets/images/common/logo_gr.svg" alt="CodeUps">
+                  <img src="./assets/images/common/logo_gr.svg" alt="CodeUps" />
                 </a>
               </div>
-              <div class="contact__access">
-                <address class="contact__info">
+              <div class="contact-area__access">
+                <address class="contact-area__info">
                   <span>沖縄県那覇市1-1</span>
                   <span><a href="tel:01200000000">TEL:0120-000-0000</a></span>
                   <span>営業時間:8:30-19:00</span>
                   <span>定休日:毎週火曜日</span>
                 </address>
-                <figure class="contact__map">
+                <figure class="contact-area__map">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.9921894034765!2d127.6882780105528!3d26.229443326965335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bd0b4a42ff1%3A0x36812e0e598f7d6b!2z44CSOTAwLTAwMDUg5rKW57iE55yM6YKj6KaH5biC5aSp5LmF77yR5LiB55uu77yR!5e0!3m2!1sja!2sjp!4v1695809396060!5m2!1sja!2sjp"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </figure>
               </div>
             </div>
 
-            <div class="contact__body">
-              <div class="contact__title section-title">
+            <div class="contact-area__body">
+              <div class="contact-area__title section-title">
                 <span class="section-title__en section-title__en--lg">contact</span>
                 <h2 class="section-title__jp">お問い合わせ</h2>
               </div>
-              <div class="contact__link">
-                <a href="#">ご予約・お問い合わせはコチラ</a>
-              </div>
-              <div class="contact__btn">
+              <p class="contact-area__text">ご予約・お問い合わせはコチラ</p>
+              <div class="contact-area__btn">
                 <a href="#" class="btn">contact us<span></span></a>
               </div>
             </div>
           </div>
         </div>
-        <img src="./assets/images/common/drawing_fish-to-left.png" class="contact__drawing" alt="魚の群れのイラスト">
       </div>
     </section>
 
     <div class="to-top js-to-top">
-      <a href="#top"><span></span></a>
+      <a href="./index.html"></a>
     </div>
-    <!-- CONTACT// -->
-
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer footer-layout">
-    <div class="inner">
+    <div class="footer__inner inner">
       <div class="footer__site-title site-title">
-        <a href="index.html" class="site-title__logo">
-          <img src="./assets/images/common/logo.svg" alt="CodeUps">
+        <a href="index.html" class="site-title__logo site-title__logo--md">
+          <img src="./assets/images/common/logo.svg" alt="CodeUps" />
         </a>
         <div class="footer__sns-links">
-          <a href="https://www.facebook.com/" class="footer__sns-link">
-            <img src="./assets/images/common/logo_fb.svg" alt="Facebookのアイコン">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/images/common/logo_fb.svg" alt="Facebookのアイコン" />
           </a>
-          <a href="https://www.instagram.com/" class="footer__sns-link">
-            <img src="./assets/images/common/logo_ig.svg" alt="instagramのアイコン">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/images/common/logo_ig.svg" alt="instagramのアイコン" />
           </a>
         </div>
       </div>
 
-      <div class="footer__nav sp-nav">
-        <div class="sp-nav__left">
-          <ul class="sp-nav__items">
-            <li class="sp-nav__item">
-              <a href="#top-campaign">キャンペーン</a>
-              <ul class="sp-nav__sub-items">
-                <li class="sp-nav__sub-item">
+      <div class="footer__nav nav">
+        <div class="nav__left">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="./campaign.html">キャンペーン</a>
+              <ul class="nav__sub-items">
+                <li class="nav__sub-item">
                   <a href="#">ライセンス取得</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">貸切体験ダイビング</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">ナイトダイビング</a>
                 </li>
               </ul>
             </li>
-            <li class="sp-nav__item">
-              <a href="#top-about">私たちについて</a>
+            <li class="nav__item">
+              <a href="./about.html">私たちについて</a>
             </li>
           </ul>
 
-          <ul class="sp-nav__items">
-            <li class="sp-nav__item">
-              <a href="#information">ダイビング情報</a>
-              <ul class="sp-nav__sub-items">
-                <li class="sp-nav__sub-item">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="./info.html">ダイビング情報</a>
+              <ul class="nav__sub-items">
+                <li class="nav__sub-item">
                   <a href="#">ライセンス講習</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">体験ダイビング</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">ファンダイビング</a>
                 </li>
               </ul>
             </li>
-            <li class="sp-nav__item">
-              <a href="#top-blog">ブログ</a>
+            <li class="nav__item">
+              <a href="./blog.html">ブログ</a>
             </li>
           </ul>
         </div>
 
-        <div class="sp-nav__right">
-          <ul class="sp-nav__items">
-            <li class="sp-nav__item">
-              <a href="#top-voice">お客様の声</a>
+        <div class="nav__right">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="./voice.html">お客様の声</a>
             </li>
-            <li class="sp-nav__item">
-              <a href="#top-price">料金一覧</a>
-              <ul class="sp-nav__sub-items">
-                <li class="sp-nav__sub-item">
+            <li class="nav__item">
+              <a href="./price.html">料金一覧</a>
+              <ul class="nav__sub-items">
+                <li class="nav__sub-item">
                   <a href="#">ライセンス講習</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">体験ダイビング</a>
                 </li>
-                <li class="sp-nav__sub-item">
+                <li class="nav__sub-item">
                   <a href="#">ファンダイビング</a>
                 </li>
               </ul>
             </li>
           </ul>
 
-          <ul class="sp-nav__items">
-            <li class="sp-nav__item">
-              <a href="#">よくある質問</a>
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="./faq.html">よくある質問</a>
             </li>
-            <li class="sp-nav__item">
-              <a href="#">プライバシー<br class="u-mobile">ポリシー</a>
+            <li class="nav__item">
+              <a href="./policy.html">プライバシー<br class="u-mobile" />ポリシー</a>
             </li>
-            <li class="sp-nav__item">
-              <a href="#">利用規約</a>
+            <li class="nav__item">
+              <a href="./terms.html">利用規約</a>
             </li>
-            <li class="sp-nav__item">
-              <a href="#">お問い合わせ</a>
+            <li class="nav__item">
+              <a href="./contact.html">お問い合わせ</a>
             </li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer__copyright">
-      <small>Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
+      <div class="footer__copyright">
+        <small>Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights
+          Reserved.</small>
+      </div>
     </div>
   </footer>
 </body>

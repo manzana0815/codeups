@@ -1,9 +1,10 @@
 @use "global" as *;
 
 .section-layout {
-  margin-top: rem(52);
+  margin-top: rem(46);
 
   @include mq(md){
-    margin-top: rem(150);
+    margin-top: rem(145);
   }
 }
+

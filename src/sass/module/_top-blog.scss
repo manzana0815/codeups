@@ -1,0 +1,69 @@
+@use "global" as *;
+
+.top-blog {
+  padding-top: rem(84);
+  position: relative;
+
+  @include mq(md) {
+    padding-top: rem(102);
+  }
+}
+
+.top-blog::before {
+  display: none;
+
+  @include mq(md) {
+    content: "";
+    background-image: url("../images/common/fish-to-left_white.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: rem(201);
+    opacity: 0.3;
+    overflow: hidden;
+    position: absolute;
+    top: 3%;
+    left: calc(50% - min(48vw, rem(621)));
+    width: rem(437);
+    z-index: 1;
+  }
+}
+
+.top-blog::after {
+  display: none;
+
+  @include mq(md) {
+    content: "";
+    background-image: url("../images/common/top-blog_bg.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: rem(500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -10;
+  }
+}
+
+
+.top-blog__cards {
+  margin-top: rem(34);
+
+  @include mq(md) {
+    margin-top: rem(85);
+  }
+}
+
+.top-blog__btn {
+  margin-top: rem(40);
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
