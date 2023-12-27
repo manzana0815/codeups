@@ -125,3 +125,18 @@
 .btn-wrapper {
   position: relative;
 }
+
+.btn__input {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 100%;
+  -webkit-appearance: none; /* ブラウザ固有のスタイリングを削除 */
+  -moz-appearance: none;
+  appearance: none;
+}

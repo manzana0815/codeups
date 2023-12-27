@@ -55,7 +55,6 @@ $textarea-height: rem(200);
 [type="email"],
 [type="password"],
 [type="date"],
-[type="submit"],
 textarea {
   /*↓リセットCSS */
   border: none;
@@ -106,19 +105,15 @@ textarea {
   width: auto;
   text-decoration: none;
   /*↓カスタム */
-  background: $back-cr-btn;
+  background: $blue;
   border-radius: $border-r-btn;
-  color: $font-cr-btn;
+  color: $white;
   cursor: pointer;
   font-size: $fz-btn;
   line-height: 1;
-  padding: $padding-und-btn $padding-lnr-btn;
+  padding: 0;
   transition: 0.1s ease;
   text-transform: capitalize;
-
-  &:hover {
-    color: $blue;
-  }
 }
 
 [type="radio"] {
