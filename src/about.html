@@ -151,13 +151,13 @@
                 <a href="./info.html">ダイビング情報</a>
                 <ul class="nav__sub-items">
                   <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
+                    <a href="./info.html#tab01">ライセンス講習</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
+                    <a href="./info.html#tab02">体験ダイビング</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
+                    <a href="./info.html#tab03">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
@@ -176,13 +176,16 @@
                 <a href="./price.html">料金一覧</a>
                 <ul class="nav__sub-items">
                   <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
+                    <a href="./price.html#price01">ライセンス講習</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
+                    <a href="./price.html#price02">体験ダイビング</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
+                    <a href="./price.html#price03">ファンダイビング</a>
+                  </li>
+                  <li class="nav__sub-item">
+                    <a href="./price.html#price04">スペシャルダイビング</a>
                   </li>
                 </ul>
               </li>
@@ -284,56 +287,51 @@
           <h2 class="section-title__jp">フォト</h2>
         </div>
 
-        <div class="gallery__container">
-          <div class="gallery__wrapper">
-            <!-- 画像をクリックしてモーダルを表示 -->
-            <div class="gallery__img gallery__img--lg gallery__img01 js-modal-trigger"
-              data-src="./assets/images/common/gallery_01.jpg" data-caption="珊瑚礁に群がるカクレクマノミの写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_01.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_01.jpg" alt="珊瑚礁に群がるカクレクマノミの写真" width="492" height="746" />
-              </picture>
-            </div>
-
-            <div class="gallery__img gallery__img02 js-modal-trigger" data-src="./assets/images/common/gallery_02.jpg"
-              data-caption="砂浜ビーチの写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_02.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_02.jpg" alt="砂浜ビーチの写真" />
-              </picture>
-            </div>
-
-            <div class="gallery__img gallery__img03 js-modal-trigger" data-src="./assets/images/common/gallery_03.jpg"
-              data-caption="2匹の熱帯魚の写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_03.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_03.jpg" alt="2匹の熱帯魚の写真" />
-              </picture>
-            </div>
+        <div class="gallery__wrapper">
+          <!-- 画像をクリックしてモーダルを表示 -->
+          <div class="gallery__item gallery__item--vertical js-modal-trigger"
+            data-src="./assets/images/common/gallery_01.jpg" data-caption="珊瑚礁に群がるカクレクマノミの写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_01.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_01.jpg" alt="珊瑚礁に群がるカクレクマノミの写真" width="492" height="746" />
+            </picture>
           </div>
 
-          <div class="gallery__wrapper gallery__wrapper--reverse">
-            <div class="gallery__img gallery__img04 js-modal-trigger" data-src="./assets/images/common/gallery_04.jpg"
-              data-caption="黄色の熱帯魚の写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_04.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_04.jpg" alt="黄色の熱帯魚の写真" />
-              </picture>
-            </div>
-            <div class="gallery__img gallery__img05 js-modal-trigger" data-src="./assets/images/common/gallery_05.jpg"
-              data-caption="珊瑚礁に群がる魚群の写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_05.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_05.jpg" alt="珊瑚礁に群がる魚群の写真" />
-              </picture>
-            </div>
-            <div class="gallery__img gallery__img--lg gallery__img06 js-modal-trigger"
-              data-src="./assets/images/common/gallery_06.jpg" data-caption="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真">
-              <picture>
-                <source srcset="./assets/images/common/gallery_06.webp" type="image/webp" />
-                <img src="./assets/images/common/gallery_06.jpg" alt="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真" />
-              </picture>
-            </div>
+          <div class="gallery__item gallery__item--landscape js-modal-trigger"
+            data-src="./assets/images/common/gallery_02.jpg" data-caption="砂浜ビーチの写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_02.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_02.jpg" alt="砂浜ビーチの写真" />
+            </picture>
+          </div>
+
+          <div class="gallery__item gallery__item--landscape js-modal-trigger"
+            data-src="./assets/images/common/gallery_03.jpg" data-caption="2匹の熱帯魚の写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_03.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_03.jpg" alt="2匹の熱帯魚の写真" />
+            </picture>
+          </div>
+          <div class="gallery__item gallery__item--landscape js-modal-trigger"
+            data-src="./assets/images/common/gallery_04.jpg" data-caption="黄色の熱帯魚の写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_04.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_04.jpg" alt="黄色の熱帯魚の写真" />
+            </picture>
+          </div>
+          <div class="gallery__item gallery__item--landscape js-modal-trigger"
+            data-src="./assets/images/common/gallery_05.jpg" data-caption="珊瑚礁に群がる魚群の写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_05.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_05.jpg" alt="珊瑚礁に群がる魚群の写真" />
+            </picture>
+          </div>
+          <div class="gallery__item gallery__item----vertical js-modal-trigger"
+            data-src="./assets/images/common/gallery_06.jpg" data-caption="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真">
+            <picture>
+              <source srcset="./assets/images/common/gallery_06.webp" type="image/webp" />
+              <img src="./assets/images/common/gallery_06.jpg" alt="珊瑚礁に群がる2匹のオレンジ色の熱帯魚の写真" />
+            </picture>
           </div>
         </div>
       </div>
@@ -344,8 +342,8 @@
           <div class="modal__content">
             <div class="modal__img">
               <picture>
-                <source srcset="" type="image/webp" class="js-modal-webp-img" />
-                <img src="" alt="" class="js-modal-img" />
+                <source srcset="" type="image/webp" class="js-modal-webp-img"/>
+                <img src="" alt="" class="js-modal-img"/>
               </picture>
             </div>
           </div>
@@ -356,7 +354,7 @@
 
 
     <!-- CONTACT -->
-    <section class="contact-area sub-contact-area-about-layout">
+    <section class="contact-area sub-contact-area-layout">
       <div class="contact-area__inner inner">
         <div class="contact-area__wrapper">
           <div class="contact-area__flex">
@@ -389,7 +387,7 @@
               </div>
               <p class="contact-area__text">ご予約・お問い合わせはコチラ</p>
               <div class="contact-area__btn">
-                <a href="#" class="btn">contact us<span></span></a>
+                <a href="./contact.html" class="btn">contact us<span></span></a>
               </div>
             </div>
           </div>
@@ -446,13 +444,13 @@
               <a href="./info.html">ダイビング情報</a>
               <ul class="nav__sub-items">
                 <li class="nav__sub-item">
-                  <a href="#">ライセンス講習</a>
+                  <a href="./info.html#tab01">ライセンス講習</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">体験ダイビング</a>
+                  <a href="./info.html#tab02">体験ダイビング</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">ファンダイビング</a>
+                  <a href="./info.html#tab03">ファンダイビング</a>
                 </li>
               </ul>
             </li>
@@ -471,13 +469,16 @@
               <a href="./price.html">料金一覧</a>
               <ul class="nav__sub-items">
                 <li class="nav__sub-item">
-                  <a href="#">ライセンス講習</a>
+                  <a href="./price.html#price01">ライセンス講習</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">体験ダイビング</a>
+                  <a href="./price.html#price02">体験ダイビング</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">ファンダイビング</a>
+                  <a href="./price.html#price03">ファンダイビング</a>
+                </li>
+                <li class="nav__sub-item">
+                  <a href="./price.html#price04">スペシャルダイビング</a>
                 </li>
               </ul>
             </li>

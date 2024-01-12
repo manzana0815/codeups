@@ -17,7 +17,7 @@
   width: rem(120);
   z-index: 1;
 
-  @include mq(md){
+  @include mq(md) {
     top: rem(-120);
     height: rem(138);
     width: rem(301);
@@ -25,117 +25,61 @@
   }
 }
 
-.gallery .inner {
+.gallery__inner.inner {
   max-width: rem(600);
 
-  @include mq(md){
+  @include mq(md) {
     max-width: rem(1130);
-  }
-}
-
-.gallery__container {
-  margin-top: rem(48);
-
-  @include mq(md){
-    margin-top: rem(82);
   }
 }
 
 .gallery__wrapper {
   display: grid;
   gap: rem(8);
-  grid-template-columns: 1fr;
-  max-width: rem(650);
-  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: rem(48);
 
   @include mq(md) {
-    grid-template-columns: 45.555556% 53.703704%;
-    grid-auto-rows: auto;
-    max-width: rem(1080);
+    grid-template-columns: repeat(24, 1fr);
+    grid-auto-flow: dense;
+    margin-top: rem(82);
   }
 }
 
-.gallery__wrapper--reverse {
-  @include mq(md){
-    grid-template-columns: 53.703704% 45.555556%;
+.gallery__item {
+  @include mq(md) {
+    grid-column: span 13;
+    grid-row: span 1;
   }
 }
 
-.gallery__wrapper + .gallery__wrapper {
-  margin-top: rem(10);
+/* 1枚目 & 6枚目の縦長の画像 */
+.gallery__item:nth-child(6n+1),
+.gallery__item:nth-child(6n+6) {
+  @include mq(md) {
+    grid-column: span 11;
+    /* 4列分の幅 */
+    grid-row: span 2;
+    /* 2行分の高さ */
+  }
 }
 
-.gallery__img {
+.gallery__item img {
   aspect-ratio: 345 / 219;
   height: 100%;
-  overflow: hidden;
-  max-width: rem(650);
+  object-fit: cover;
   width: 100%;
 
   @include mq(md) {
     aspect-ratio: 580 / 364;
-    max-width: rem(580);
   }
 }
 
-.gallery__img--lg {
+.gallery__item:nth-child(6n+1) img,
+.gallery__item:nth-child(6n+6) img {
   aspect-ratio: 345 / 523;
-  height: 100%;
-  overflow: hidden;
-  max-width: rem(650);
-  width: 100%;
 
   @include mq(md) {
     aspect-ratio: 492 / 736;
-    max-width: rem(492);
   }
-}
-
-.gallery__img01 {
-  @include mq(md) {
-    grid-column: 1/ 2;
-    grid-row: 1 /3;
-  }
-}
-
-.gallery__img02 {
-  @include mq(md) {
-    grid-column: 2/ 3;
-    grid-row: 1 / 2;
-  }
-}
-
-.gallery__img03 {
-  @include mq(md) {
-    grid-column: 2/ 3;
-    grid-row: 2 / 3;
-  }
-}
-
-.gallery__img04 {
-  @include mq(md) {
-    grid-column: 1/ 2;
-    grid-row: 1 / 2;
-  }
-}
-
-.gallery__img05 {
-  @include mq(md) {
-    grid-column: 1/ 2;
-    grid-row: 2 / 3;
-  }
-}
-
-.gallery__img06 {
-  @include mq(md) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-  }
-}
-
-.gallery__img img {
-  cursor: pointer;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
 }

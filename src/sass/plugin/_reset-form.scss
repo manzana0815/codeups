@@ -97,23 +97,25 @@ textarea {
 
 [type="submit"] {
   /*↓リセットCSS */
-  margin: 0;
   background-image: none;
   border: none;
   border-radius: 0;
   display: inline-block;
+  margin: 0;
   width: auto;
   text-decoration: none;
   /*↓カスタム */
-  background: $blue;
+  background: transparent;
   border-radius: $border-r-btn;
   color: $white;
   cursor: pointer;
   font-size: $fz-btn;
   line-height: 1;
   padding: 0;
-  transition: 0.1s ease;
+  position: relative;
+  transition: .2s ease;
   text-transform: capitalize;
+  z-index: 20;
 }
 
 [type="radio"] {

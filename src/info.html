@@ -152,13 +152,13 @@
                   <a href="./info.html">ダイビング情報</a>
                   <ul class="nav__sub-items">
                     <li class="nav__sub-item">
-                      <a href="#">ライセンス講習</a>
+                      <a href="./info.html#tab01">ライセンス講習</a>
                     </li>
                     <li class="nav__sub-item">
-                      <a href="#">体験ダイビング</a>
+                      <a href="./info.html#tab02">体験ダイビング</a>
                     </li>
                     <li class="nav__sub-item">
-                      <a href="#">ファンダイビング</a>
+                      <a href="./info.html#tab03">ファンダイビング</a>
                     </li>
                   </ul>
                 </li>
@@ -177,13 +177,16 @@
                   <a href="./price.html">料金一覧</a>
                   <ul class="nav__sub-items">
                     <li class="nav__sub-item">
-                      <a href="#">ライセンス講習</a>
+                      <a href="./price.html#price01">ライセンス講習</a>
                     </li>
                     <li class="nav__sub-item">
-                      <a href="#">体験ダイビング</a>
+                      <a href="./price.html#price02">体験ダイビング</a>
                     </li>
                     <li class="nav__sub-item">
-                      <a href="#">ファンダイビング</a>
+                      <a href="./price.html#price03">ファンダイビング</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price04">スペシャルダイビング</a>
                     </li>
                   </ul>
                 </li>
@@ -237,14 +240,17 @@
       <!-- INFORMATION -->
       <div class="info info-layout">
         <div class="info__inner inner">
-          <ul class="info__tabs js-tab-list">
-            <li class="info__tab tab current"><span>ライセンス<br class="u-mobile">講習</span></li>
-            <li class="info__tab tab"><span>ファン<br class="u-mobile">ダイビング</span></li>
-            <li class="info__tab tab"><span>体験<br class="u-mobile">ダイビング</span></li>
+          <ul class="info__tabs">
+            <li class="info__tab tab js-tab active" data-number="tab01" data-url="/path-to-ライセンス講習"><a
+                href="#tab01"><span>ライセンス<br class="u-mobile">講習</span></a></li>
+            <li class="info__tab tab js-tab" data-number="tab02"><a href="#tab02"><span>体験<br
+                    class="u-mobile">ダイビング</span></a></li>
+            <li class="info__tab tab js-tab" data-number="tab03"><a href="#tab03"><span>ファン<br
+                    class="u-mobile">ダイビング</span></a></li>
           </ul>
 
           <div class="info__cards">
-            <div class="info__card info-card js-tab-set">
+            <div id="tab01" class="info__card info-card js-info-card active">
               <div class="info-card__wrapper">
                 <div class="info-card__content">
                   <h3 class="info-card__title">ライセンス講習</h3>
@@ -259,7 +265,22 @@
               </div>
             </div>
 
-            <div class="info__card info-card js-tab-set">
+            <div id="tab02" class="info__card info-card js-info-card">
+              <div class="info-card__wrapper">
+                <div class="info-card__content">
+                  <h3 class="info-card__title">体験ダイビング</h3>
+                  <p class="info-card__text text">
+                    ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                  </p>
+                </div>
+                <picture class="info-card__img">
+                  <source srcset="./assets/images/common/info-card_03.webp" type="image/webp">
+                  <img src="./assets/images/common/info-card_03.jpg" alt="ダイバーが円になって集まっている写真">
+                </picture>
+              </div>
+            </div>
+
+            <div id="tab03" class="info__card info-card js-info-card">
               <div class="info-card__wrapper">
                 <div class="info-card__content">
                   <h3 class="info-card__title">ファンダイビング</h3>
@@ -275,34 +296,18 @@
                 </div>
               </div>
             </div>
-
-            <div class="info__card info-card js-tab-set">
-              <div class="info-card__wrapper">
-                <div class="info-card__content">
-                  <h3 class="info-card__title">体験ダイビング</h3>
-                  <p class="info-card__text text">
-                    ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-                  </p>
-                </div>
-                <picture class="info-card__img">
-                  <source srcset="./assets/images/common/info-card_03.webp" type="image/webp">
-                  <img src="./assets/images/common/info-card_03.jpg" alt="ダイバーが円になって集まっている写真">
-                </picture>
-              </div>
-            </div>
           </div>
-
         </div>
       </div>
 
       <!-- CONTACT -->
-      <section class="contact-area sub-contact-area-info-layout">
+      <section class="contact-area sub-contact-area-layout">
         <div class="contact-area__inner inner">
           <div class="contact-area__wrapper">
             <div class="contact-area__flex">
               <div class="contact-area__header">
                 <div class="contact-area__site-title site-title">
-                  <a href="index.html" class="site-title__logo site-title__logo--lg">
+                  <a href="./index.html" class="site-title__logo site-title__logo--lg">
                     <img src="./assets/images/common/logo_gr.svg" alt="CodeUps">
                   </a>
                 </div>
@@ -329,7 +334,7 @@
                 </div>
                 <p class="contact-area__text">ご予約・お問い合わせはコチラ</p>
                 <div class="contact-area__btn">
-                  <a href="#" class="btn">contact us<span></span></a>
+                  <a href="./contact.html" class="btn">contact us<span></span></a>
                 </div>
               </div>
             </div>
@@ -347,7 +352,7 @@
     <footer class="footer footer-layout">
       <div class="footer__inner inner">
         <div class="footer__site-title site-title">
-          <a href="index.html" class="site-title__logo site-title__logo--md">
+          <a href="./index.html" class="site-title__logo site-title__logo--md">
             <img src="./assets/images/common/logo.svg" alt="CodeUps">
           </a>
           <div class="footer__sns-links">
@@ -387,13 +392,13 @@
                 <a href="./info.html">ダイビング情報</a>
                 <ul class="nav__sub-items">
                   <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
+                    <a href="./info.html#tab01">ライセンス講習</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
+                    <a href="./info.html#tab02">体験ダイビング</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
+                    <a href="./info.html#tab03">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
@@ -412,13 +417,16 @@
                 <a href="./price.html">料金一覧</a>
                 <ul class="nav__sub-items">
                   <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
+                    <a href="./price.html#price01">ライセンス講習</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
+                    <a href="./price.html#price02">体験ダイビング</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
+                    <a href="./price.html#price03">ファンダイビング</a>
+                  </li>
+                  <li class="nav__sub-item">
+                    <a href="./price.html#price04">スペシャルダイビング</a>
                   </li>
                 </ul>
               </li>

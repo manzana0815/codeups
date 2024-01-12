@@ -43,12 +43,16 @@
   }
 }
 
-.top-voice .inner {
+.top-voice__inner.inner {
   max-width: rem(600);
 
   @include mq(md){
     max-width: rem(1130);
   }
+}
+
+.top-voice__cards {
+  margin-top: rem(40);
 }
 
 .top-voice__btn {

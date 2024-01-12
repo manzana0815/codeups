@@ -18,7 +18,7 @@
   width: 100%;
   z-index: 1;
 
-  @include mq(md){
+  @include mq(md) {
     top: rem(-70);
     height: calc(138 / 1440 * 100vw);
     max-width: rem(301);
@@ -26,10 +26,10 @@
   }
 }
 
-.contact .inner {
+.contact__inner.inner {
   max-width: rem(600);
 
-  @include mq(md){
+  @include mq(md) {
     max-width: rem(1130);
   }
 }
@@ -40,30 +40,31 @@
   width: 100%;
 }
 
-.contact__error-text {
+.contact__error-message {
   color: #C94800;
   display: none;
   font-size: rem(14);
   max-width: rem(238);
   margin: auto;
   padding-left: 1em;
+  display: none;
 
-  @include mq(md){
+  @include mq(md) {
     max-width: rem(364);
     text-align: center;
   }
 }
 
-.contact__error-text::before {
+.contact__error-message::before {
   content: "※";
   display: inline-block;
   margin-left: -1em;
 }
 
-.contact__error-text.empty {
+.contact__error-message.empty {
   display: block;
 }
 
-.contact__error-text + .contact__form {
+.contact__error-message+.contact__form {
   margin-top: rem(40);
 }

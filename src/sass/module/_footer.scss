@@ -10,7 +10,7 @@ footer {
   }
 }
 
-.footer .inner {
+.footer__inner.inner {
   max-width: rem(600);
 
   @include mq(md){

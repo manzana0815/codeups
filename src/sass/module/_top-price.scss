@@ -33,7 +33,7 @@
   }
 }
 
-.top-price .inner {
+.top-price__inner.inner {
   max-width: rem(600);
 
   @include mq(md){
@@ -57,13 +57,11 @@
 
 .top-price__img {
   margin: auto;
-  max-width: rem(650);
   overflow: hidden;
   width: 100%;
 
   @include mq(md) {
     margin: 0;
-    max-width: rem(492);
   }
 }
 
@@ -81,7 +79,6 @@
 
 .top-price__table {
   @include mq(md) {
-    max-width: rem(492);
     width: 100%;
   }
 }

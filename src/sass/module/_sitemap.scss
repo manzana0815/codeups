@@ -24,7 +24,7 @@
     z-index: -1;
   }
 }
-.sitemap .inner {
+.sitemap__inner.inner {
   max-width: rem(600);
 
   @include mq(md){

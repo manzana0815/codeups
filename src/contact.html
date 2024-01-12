@@ -153,13 +153,13 @@
                 <a href="./info.html">ダイビング情報</a>
                 <ul class="nav__sub-items">
                   <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
+                    <a href="./info.html#tab01">ライセンス講習</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
+                    <a href="./info.html#tab02">体験ダイビング</a>
                   </li>
                   <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
+                    <a href="./info.html#tab03">ファンダイビング</a>
                   </li>
                 </ul>
               </li>
@@ -176,17 +176,20 @@
               </li>
               <li class="nav__item">
                 <a href="./price.html">料金一覧</a>
-                <ul class="nav__sub-items">
-                  <li class="nav__sub-item">
-                    <a href="#">ライセンス講習</a>
-                  </li>
-                  <li class="nav__sub-item">
-                    <a href="#">体験ダイビング</a>
-                  </li>
-                  <li class="nav__sub-item">
-                    <a href="#">ファンダイビング</a>
-                  </li>
-                </ul>
+                  <ul class="nav__sub-items">
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price01">ライセンス講習</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price02">体験ダイビング</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price03">ファンダイビング</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price04">スペシャルダイビング</a>
+                    </li>
+                  </ul>
               </li>
             </ul>
             <ul class="nav__items">
@@ -238,7 +241,7 @@
     <div class="contact section-layout">
       <div class="contact__inner inner">
         <div class="contact__content">
-          <p class="contact__error-text">必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
+          <p class="contact__error-message" id="required-fields-error">必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
           <form target="_self" method="POST" id="form" class="contact__form form">
             <div class="form__items">
               <dl class="form__item">
@@ -280,8 +283,7 @@
                   <ul class="form__checkbox-items">
                     <li class="form__checkbox-item">
                       <label>
-                        <input type="checkbox" name="option1" value="ダイビング講習について"
-                          checked /><span>ダイビング講習について</span>
+                        <input type="checkbox" name="option1" value="ダイビング講習について" checked /><span>ダイビング講習について</span>
                       </label>
                     </li>
                     <li class="form__checkbox-item">
@@ -326,13 +328,16 @@
                   <label>
                     <input type="checkbox">
                     <span></span>
-                    <p class="form__text">個人情報の取り扱いについて同意のうえ送信します。</p>
+                    <span class="form__text">個人情報の取り扱いについて同意のうえ送信します。</span>
                   </label>
                 </div>
               </div>
-              <div class="form__btn btn">
-                <input type="submit" class="btn__input js-submit" value="send" form="form">
-                <span></span>
+              <div class="form__btn">
+                <a href="" class="btn">send<span></span></a>
+                <!-- <label for="submit">
+                  <input type="submit" id="submit" class="js-submit" value="send" form="form">
+                  <span></span>
+                </label> -->
               </div>
             </div>
           </form>
@@ -390,13 +395,13 @@
               <a href="./info.html">ダイビング情報</a>
               <ul class="nav__sub-items">
                 <li class="nav__sub-item">
-                  <a href="#">ライセンス講習</a>
+                  <a href="./info.html#tab01">ライセンス講習</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">体験ダイビング</a>
+                  <a href="./info.html#tab02">体験ダイビング</a>
                 </li>
                 <li class="nav__sub-item">
-                  <a href="#">ファンダイビング</a>
+                  <a href="./info.html#tab03">ファンダイビング</a>
                 </li>
               </ul>
             </li>
@@ -413,17 +418,21 @@
             </li>
             <li class="nav__item">
               <a href="./price.html">料金一覧</a>
-              <ul class="nav__sub-items">
-                <li class="nav__sub-item">
-                  <a href="#">ライセンス講習</a>
-                </li>
-                <li class="nav__sub-item">
-                  <a href="#">体験ダイビング</a>
-                </li>
-                <li class="nav__sub-item">
-                  <a href="#">ファンダイビング</a>
-                </li>
-              </ul>
+                  <ul class="nav__sub-items">
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price01">ライセンス講習</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price02">体験ダイビング</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price03">ファンダイビング</a>
+                    </li>
+                    <li class="nav__sub-item">
+                      <a href="./price.html#price04">スペシャルダイビング</a>
+                    </li>
+                  </ul>
+
             </li>
           </ul>
 

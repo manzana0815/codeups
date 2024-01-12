@@ -1,18 +1,19 @@
 @use "global" as *;
 
 .sub-mv {
+  height: rem(460);
   position: relative;
+
+  @include mq(md) {
+    height: rem(548);
+  }
 }
 
 .sub-mv__img {
-  height: rem(460);
+  height: inherit;
   overflow: hidden;
   position: relative;
   width: 100%;
-
-  @include mq(md){
-    height: rem(548);
-  }
 }
 
 .sub-mv__img::before {
@@ -41,7 +42,7 @@
   width: 100%;
   z-index: 10;
 
-  @include mq(md){
+  @include mq(md) {
     top: 59%;
   }
 }

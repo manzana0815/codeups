@@ -7,7 +7,7 @@
 
 }
 
-.top-campaign .inner {
+.top-campaign__inner.inner {
   max-width: rem(600);
 
   @include mq(md){

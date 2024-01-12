@@ -5,11 +5,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: rem(650);
   padding: rem(16) rem(16) rem(24);
 
   @include mq(md) {
-    max-width: rem(520);
     padding: rem(24);
     width: 100%;
   }

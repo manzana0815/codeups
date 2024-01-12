@@ -25,23 +25,11 @@
     z-index: -1;
   }
 }
+.campaign__inner.inner {
+  max-width: rem(600);
 
-.campaign__filters {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: rem(16) rem(18);
-  place-items: center;
-  margin: auto;
-  max-width: rem(345);
-  position: relative;
-
-  @include mq(md) {
-    display: flex;
-    align-items: center;
-    gap: 0 rem(32);
-    margin-left: 0;
-    margin-right: auto;
-    max-width: rem(744);
+  @include mq(md){
+    max-width: rem(1130);
   }
 }
 
@@ -60,13 +48,6 @@
   }
 }
 
-.campaign .inner {
-  max-width: rem(600);
-
-  @include mq(md){
-    max-width: rem(1130);
-  }
-}
 
 .campaign__detail {
   display: none;

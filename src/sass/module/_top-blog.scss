@@ -50,6 +50,14 @@
   }
 }
 
+.top-blog__inner.inner {
+  max-width: rem(600);
+
+  @include mq(md){
+    max-width: rem(1130);
+  }
+}
+
 
 .top-blog__cards {
   margin-top: rem(34);

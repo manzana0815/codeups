@@ -25,7 +25,7 @@
   }
 }
 
-.price .inner {
+.price__inner.inner {
   max-width: rem(600);
 
   @include mq(md){
@@ -33,105 +33,7 @@
   }
 }
 
-.price__table-items {
+.price__items {
   margin: 0 auto;
   max-width: rem(700);
-}
-
-.price__table-item {
-  @include mq(md){
-    display: flex;
-  }
-}
-
-.price__table-item + .price__table-item {
-  margin-top: rem(38);
-
-  @include mq(md){
-    margin-top: rem(80);
-  }
-}
-
-.price__title {
-  background-color: $blue;
-  color: $white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(8);
-  font-size: rem(16);
-  line-height: calc(24 / 16);
-  padding: rem(8);
-  text-align: center;
-
-  @include mq(md){
-    flex-direction: column-reverse;
-    width: 28.571429%;
-  }
-}
-
-.price__title::before {
-  content: "";
-  background-image: url("../images/common/whale_white.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: rem(24);
-  width: rem(24);
-
-  @include mq(md){
-    height: rem(64);
-    width: rem(64);
-  }
-}
-
-
-.price__table {
-  border: 1px solid $blue;
-
-  @include mq(md){
-    width: 71.428571%;
-  }
-}
-
-.price__table-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.price__table-row:not(:first-child) {
-  border-top: 1px solid $blue;
-}
-
-.price__table dt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: rem(59.5);
-  text-align: center;
-  width: 69%;
-
-  @include mq(md){
-    justify-content: initial;
-    min-height: rem(58);
-    padding: rem(16);
-    text-align: left;
-    width: 67%;
-  }
-}
-
-.price__table dd {
-  border-left: 1px solid $blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: rem(59.5);
-  text-indent: 1em;
-  width: 31%;
-
-  @include mq(md){
-    justify-content: flex-end;
-    min-height: rem(58);
-    padding: rem(16);
-    width: 33%;
-  }
 }

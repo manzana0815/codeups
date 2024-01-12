@@ -14,8 +14,9 @@
   padding: rem(15) rem(33);
   position: relative;
   text-align: center;
+  transition: .2s ease;
   width: 100%;
-  z-index: 1;
+  z-index: 20;
 }
 
 .btn::first-letter {
@@ -35,8 +36,10 @@
   height: rem(14);
   margin-left: rem(8);
   max-width: rem(40);
+  position: relative;
   transition: .2s all;
   width: 100%;
+  z-index: 20;
 }
 
 .btn:hover span {
@@ -70,6 +73,7 @@
   top: 5px;
   left: 5px;
   width: 100%;
+  z-index: -10;
 }
 
 
@@ -120,23 +124,4 @@
   left: 5px;
   width: 100%;
   z-index: -10;
-}
-
-.btn-wrapper {
-  position: relative;
-}
-
-.btn__input {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  display: block;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  width: 100%;
-  -webkit-appearance: none; /* ブラウザ固有のスタイリングを削除 */
-  -moz-appearance: none;
-  appearance: none;
 }
