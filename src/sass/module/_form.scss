@@ -1,30 +1,192 @@
 @use "global" as *;
+/*デフォルト色の指定*/
+$border-cr-default: $blue; //デフォルト時のボーダーの色
+$border-cr: $blue; //inputのhover or focus時の色
+$back-cr: #fff; //input（テキスト系）の背景色
 
-.form__items {
-  text-align: center;
+/*サイズ等の指定*/
+$fz: rem(12); //入力するときのfont-size
+$padding-und: rem(8); //paddingの指定（上下） inputの内側の余白で使う
+$padding-lnr: rem(16); //paddingの指定（左右） inputの内側の余白で使う
+$border-r: 0; //border-radius（テキスト系）
+
+/*ボタン系の指定*/
+$fz-btn: rem(14); //送信ボタンのfont-size
+$back-cr-btn: $blue; //ボタンの背景色
+$font-cr-btn: $white; //ボタンのフォントカラー
+$padding-und-btn: rem(16); //paddingの指定（上下） btnの内側の余白で使う
+$padding-lnr-btn: rem(56); //paddingの指定（左右） btnの内側の余白で使う
+$border-r-btn: 0;
+
+/*ラジオボタンの指定*/
+$radio-fz: rem(12); //フォントサイズ
+$radio-size: rem(18); //外枠の幅高さ
+$radio-bg-cr: #fff; //外枠の背景色
+$radio-border-cr: #707070; //外枠の色
+$radio-size-inner: rem(12); //チェックマーク幅高さ
+$radio-bg-cr-inner: $blue; //チェックマークの背景色
+$radio-space: rem(10); //チェックマークと文字の距離
+$radio-space-betweenRadio: rem(35); //ラジオボタンの間の距離
+
+/*チェックボックスの指定*/
+$check-fz: rem(16); //フォントサイズ
+$check-size: rem(14); //外枠の幅高さ
+$check-bg-cr: #fff; //外枠の背景色
+$check-border-cr: $blue; //外枠の色
+$check-bg-cr-inner: #C94800; //チェックマークの背景色
+$check-space: rem(8); //チェックマークと文字の距離
+$check-space-betweenRadio: rem(20); //ラジオボタンの間の距離
+$check-weight: 2px; //チェックマークの線の太さ(px)
+
+/*テキストエリアの指定*/
+$textarea-height: rem(200);
+
+[type="text"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="password"],
+[type="date"],
+textarea {
+  background: $back-cr;
+  border: 1px solid $border-cr-default;
+  font-size: $fz;
+  padding: $padding-und $padding-lnr;
+  width: 100%;
+
+  &:hover {
+    outline: 2px solid #C94800;
+  }
+
+  /*↓↓選択されているときの色*/
+  &:focus {
+    outline: 2px solid $border-cr;
+    transition: 0.2s;
+  }
+}
+
+[type="button"],
+[type="submit"] {
+  color: $white;
+  cursor: pointer;
+  font-size: $fz-btn;
+  line-height: 1;
+  padding-inline: 0;
+  position: relative;
+  transition: .2s ease;
+  text-transform: capitalize;
+  z-index: 20;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: -100vw;
+
+  +span {
+    padding: 0 0 0 calc($check-size + $check-space);
+    position: relative;
+    font-size: $check-fz;
+    transition: 0.3s ease;
+
+    &::before {
+      content: "";
+      background: $check-bg-cr;
+      border: 1px solid $check-border-cr;
+      display: inline-block;
+      height: $check-size;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: $check-size;
+
+      &:focus {
+        outline: 2px solid $blue;
+        transition: 0.1s ease;
+      }
+    }
+
+    &::after {
+      opacity: 0;
+      transition: 0.1s ease;
+    }
+  }
+
+  &:checked+span {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      opacity: 1;
+      /*チェックマークじゃない場合は以下を変更する*/
+      transform: translateY(-50%) rotate(-45deg);
+      width: calc($check-size * 0.9);
+      height: calc($check-size * 0.5);
+      margin-top: -0.1em;
+      margin-left: 0.1em;
+      border-left: $check-weight solid $check-bg-cr-inner;
+      border-bottom: $check-weight solid $check-bg-cr-inner;
+
+    }
+  }
+}
+
+select {
+  /*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
+  appearance: none;
+  /*↓カスタム */
+  background: url("../images/common/select-icon.svg") right rem(9) center no-repeat;
+  border: 1px solid $border-cr-default;
+  border-radius: $border-r;
+  font-size: $fz;
+  position: relative;
+  padding: $padding-und $padding-lnr;
+  width: 100%;
+
+  &:focus,
+  &:hover {
+    outline: 2px solid $border-cr;
+    transition: 0.2s;
+  }
+}
+
+textarea {
+  display: block;
+  height: $textarea-height;
+  line-height: 1.5;
+  resize: none;
+  width: 100%;
+}
+
+::placeholder {
+  color: #DDF0F1;
+}
+
+/* 旧Edge対応 */
+::-ms-input-placeholder {
+  color: #DDF0F1;
+}
+
+/* IE対応 */
+:-ms-input-placeholder {
+  color: #DDF0F1;
 }
 
 .form__item {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: rem(14);
   padding-bottom: rem(24);
 
   @include mq(md) {
-    align-items: start;
-    flex-direction: row;
-    gap: rem(8);
+    grid-template-columns: rem(195) 1fr;
+    gap: rem(39);
     justify-content: space-between;
     padding-bottom: rem(40);
   }
-}
-
-.form__item input[required].empty,
-.form__item textarea[required].empty {
-  background: rgba(201, 72, 0, 0.2);
-  border: 1px solid #C94800;
-  color: $white;
-  transition: 0.1s ease;
 }
 
 .form__item:not(:first-child) {
@@ -36,40 +198,42 @@
   }
 }
 
-.form__item.form__item--pt50 {
-  @include mq(md) {
-    padding-top: rem(50);
-  }
-}
-
-.form__item.form__item--pt70 {
+.form__item:last-child {
+  display: block;
+  padding-bottom: 0;
   padding-top: rem(40);
+  text-align: center;
 
   @include mq(md) {
-    padding-top: rem(70);
+    padding-top: rem(80);
   }
 }
 
-.form__item dt {
-  display: flex;
+.form__item.form__item--center {
   align-items: center;
-  gap: rem(8);
+}
 
-  @include mq(md) {
-    width: 29%;
-  }
+.form__item input[required].empty,
+.form__item textarea[required].empty {
+  background: rgba(201, 72, 0, 0.2);
+  border: 1px solid #C94800;
+  color: $white;
+  transition: 0.1s ease;
 }
 
 .form__title {
   font-weight: $bold;
 }
 
-.form__item dd {
-  line-height: 1;
-
-  @include mq(md) {
-    width: 69%;
-  }
+.form__label {
+  background-color: #C94800;
+  color: $white;
+  display: inline-block;
+  font-size: rem(12);
+  letter-spacing: 0.3em;
+  margin-left: rem(5);
+  padding: rem(2) rem(10);
+  text-indent: 0.3em;
 }
 
 .form__checkbox-items {
@@ -77,10 +241,6 @@
   flex-direction: column;
   gap: rem(16);
   text-align: left;
-}
-
-.form__checkbox-item span {
-  line-height: 1.5;
 }
 
 .form__privacy {
@@ -121,126 +281,100 @@
   text-align: left;
 }
 
-.form__select {
-  position: relative;
-}
-
-.form__select::after {
-  content: "";
-  border-style: solid;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  border-top: 10px solid $blue;
-  border-bottom: 0;
+.form__btn {
+  background-color: $blue;
+  border: 1px solid $blue;
   display: inline-block;
-  height: 0;
-  position: absolute;
-  top: 50%;
-  right: rem(8);
-  transform: translateY(-50%);
-  width: 0;
-}
+  font-family: $english-font;
+  font-size: rem(14);
+  font-weight: $regular;
+  line-height: calc(22 / 14);
+  margin-top: rem(26);
+  max-width: rem(202);
+  padding: rem(16) rem(56);
+  position: relative;
+  text-align: center;
+  transition: color 0.2s;
+  width: 100%;
+  z-index: 20;
 
-.form__select select {
-  font-size: rem(12);
-  padding: rem(12);
-
-  @include mq(md) {
-    padding: rem(6) rem(8);
+  @include mq(md){
+    margin-top: rem(40);
   }
 }
 
-// .form__btn {
-//   background-color: $blue;
-//   display: inline-block;
-//   margin: rem(24) auto 0;
-//   max-width: rem(202);
-//   padding: rem(15) rem(55);
-//   position: relative;
-//   width: 100%;
+.form__btn::before {
+  background-color: $white;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
 
-//   @include mq(md) {
-//     margin: rem(40) auto 0;
-//   }
-// }
+.form__btn:hover::before {
+  transform: scale(1, 1);
+}
 
-// .form__btn::before {
-//   background-color: $white;
-//   content: "";
-//   height: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   transform: scale(0, 1);
-//   transform-origin: left top;
-//   transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
-//   width: 100%;
-//   z-index: -1;
-// }
+.form__btn::after {
+  content: "";
+  background-color: transparent;
+  border: 1px solid $blue;
+  height: 100%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  z-index: -10;
+}
 
-// .form__btn:hover::before {
-//   transform: scale(1, 1);
-// }
+.form__btn span {
+  background-image: url("../images/common/arrow-right_white.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: rem(14);
+  max-width: rem(40);
+  position: relative;
+  right: rem(-10);
+  transition: .2s all;
+  width: 100%;
+  z-index: 20;
+}
 
-// .form__btn::after {
-//   content: "";
-//   background-color: transparent;
-//   border: 1px solid $blue;
-//   height: 100%;
-//   position: absolute;
-//   top: 5px;
-//   left: 5px;
-//   width: 100%;
-//   z-index: -10;
-// }
+.form__btn:hover span {
+  background-image: url("../images/common/arrow-right_green.svg");
 
-// .form__btn::before,
-// .form__btn::after {
-//   pointer-events: none;
-// }
+}
+.form__btn input {
+  color: $white;
+}
 
-// .form__btn label {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+.form__btn:hover input {
+  color: $blue;
+}
 
-// .form__btn input {
-//   border: 1px solid $blue;
-//   color: $white;
-//   cursor: pointer;
-//   display: inline-block;
-//   font-family: $english-font;
-//   font-size: rem(14);
-//   font-weight: $regular;
-//   line-height: calc(22 / 14);
-//   position: relative;
-//   text-transform: capitalize;
-//   transition: .2s ease;
-//   width: 100%;
-//   z-index: 20;
-// }
+.form__item input.is-error {
+	border: 1px solid #c94800;
+	background: rgba(201, 72, 0, 0.2);
+}
 
-// .form__btn input:hover {
-//   color: $blue;
-//   cursor: pointer;
-// }
+.form__item input.is-error::placeholder {
+	color: $white;
+}
 
-
-// .form__btn span {
-//   background-image: url("../images/common/arrow-right_white.svg");
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   display: inline-block;
-//   height: rem(14);
-//   max-width: rem(40);
-//   position: absolute;
-//   top: 46%;
-//   right: 0;
-//   transform: translateY(-50%);
-//   transition: .2s all;
-//   width: 100%;
-//   z-index: 20;
-
-// }
+.form__item textarea.is-error {
+	border: 1px solid #c94800;
+	background: rgba(201, 72, 0, 0.2);
+}
+.form__checkbox-item.is-error span::before,
+.form__privacy label.is-error span::before {
+  border: 1px solid #c94800; /* エラー時の枠線の色 */
+  background: rgba(201, 72, 0, 0.2); /* エラー時の背景色 */
+}

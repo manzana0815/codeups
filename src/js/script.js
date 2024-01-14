@@ -137,100 +137,75 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   // ------------------
   // MODAL
   // ------------------
-  // モーダル要素を取得
-  const modal = document.querySelector(".js-modal");
-  if (modal) {
-    // ページ固有の操作を実行
-    const modalImage = modal.querySelector(".js-modal-img");
-    if (modalImage) {
-      // modalImageが存在する場合の処理
-    }
-  }
-
-  if (modal) {
-    // モーダルコンテンツのクリックイベントが外側に伝播しないようにする
-    const modalInner = modal.querySelector(".modal__inner");
-    if (modalInner) {
-      modal.addEventListener("click", function (event) {
-        event.stopPropagation();
-      });
-    }
-    if (modalInner) {
-      modalInner.addEventListener("click", function (event) {
-        event.stopPropagation();
-      });
-
-      // モーダルを表示する関数
-      function openModal(imageSrc, caption) {
-        const modalImage = modal.querySelector(".js-modal-img");
-        const modalWebpImage = modal.querySelector(".js-modal-webp-img");
-
-        // 画像を読み込んだ後に実行されるコールバック関数
-        const adjustModalSize = function () {
-          modal.classList.add("show");
-
-          // 背景ページのスクロールを無効にする
-          document.body.style.overflow = "hidden";
-
-          // 画像の幅を取得して、modal__innerの横幅を調整
-          const imageWidth = modalImage.width;
-          modalInner.style.maxWidth = imageWidth + "px"; // 最大幅を設定
-        };
-
-        modalImage.onload = adjustModalSize; // 画像の読み込みが完了したらコールバックを実行
-        modalImage.src = imageSrc;
-        modalWebpImage.srcset = imageSrc.replace(".jpg", ".webp");
-      }
-
-      // モーダルを閉じる関数
-      function closeModal() {
+// モーダル要素を取得
+const modal = document.querySelector(".js-modal");
+if (modal) {
+  // モーダルコンテンツのクリックイベントが外側に伝播しないようにする
+  const modalInner = modal.querySelector(".modal__inner");
+  if (modalInner) {
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal || event.target === modalInner) {
         modal.classList.remove("show");
-
-        // 背景ページのスクロールを有効にする
         document.body.style.overflow = "";
       }
+    });
 
-      // モーダルトリガーのイベントリスナーを設定
-      const modalTriggerElements = document.querySelectorAll(".js-modal-trigger");
-      modalTriggerElements.forEach(function (element) {
-        element.addEventListener("click", function () {
-          const imageSrc = element.getAttribute("data-src");
-          const caption = element.getAttribute("data-caption");
-          openModal(imageSrc, caption);
-        });
-      });
+    // モーダルを表示する関数
+    function openModal(imageSrc, caption) {
+      const modalImage = modal.querySelector(".js-modal-img");
+      modalImage.src = imageSrc;
+      modalImage.alt = caption;
 
-      // モーダルの外側をクリックした際に閉じるイベントリスナーを設定
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
     }
-  }
 
+    // モーダルトリガーのイベントリスナーを設定
+    const modalTriggerElements = document.querySelectorAll(".js-modal-trigger");
+    modalTriggerElements.forEach(function (element) {
+      element.addEventListener("click", function () {
+        const imageSrc = element.getAttribute("data-src");
+        const caption = element.getAttribute("data-caption");
+        openModal(imageSrc, caption);
+      });
+    });
+  }
+}
 
   // ------------------
   // タブメニュー
   // ------------------
   // 別ページからのダイレクトリンク用関数
   function activateTabFromHash() {
+    // URLからhashを取得
     var hash = window.location.hash;
-
+    // hashが存在しない場合は
     if (!hash) {
-      hash = '#tab01'; // デフォルトのタブ
+      // 変数hashに"#tab01"を代入してデフォルトのタブとする
+      hash = '#tab01';
     }
 
+    // ハッシュがページ上に存在したら
+    if ($(hash).offset()) {
+      // FVの高さを取得
+      var fvHeight = $('.sub-mv').height(); // 仮にFVのIDが"fv"と仮定
+      // タブの高さを取得
+      var tabHeight = $('.info__tabs').height();
+      // スクロール位置の計算を変更
+      var scrollTop = $(hash).offset().top - fvHeight - tabHeight;
+    }
+
+    // デフォルトのタブまたは現在アクティブのタブを無効にして
     $('.js-tab, .js-info-card').removeClass('active');
+    // 該当するタブに新たにアクティブクラスを付与
     $('.js-tab a[href="' + hash + '"]').parent().addClass('active');
+
     $(hash).addClass('active');
 
     // タブまでスクロール
-    if ($(hash).offset()) {
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 500); // 500ミリ秒でスクロール
-    }
+    $('html, body').animate({
+      scrollTop: scrollTop
+    }, 500); // 500ミリ秒でスクロール
   }
 
   // ページ読み込みとハッシュ変更時にタブをアクティブにする
@@ -303,42 +278,69 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".wrap").css("min-height", window_height + "px");
   });
 
-
-
-
   // ------------------
   // CONTACT FORM
   // ------------------
-  // DOMが完全に読み込まれた後に実行
-  document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("form");
+  var formBtn = document.querySelector('.form__btn');
 
-    // formが存在する場合のみ、以下のコードを実行
-    if (form) {
-      var submitButton = document.querySelector(".js-submit");
-      var errorText = document.querySelector(".contact__error-message");
-      var requiredFields = form.querySelectorAll("input[required], textarea[required], select[required]");
+  if (formBtn) {
+    formBtn.addEventListener('click', function(event) {
+      event.preventDefault(); // 通常のフォーム送信を防止
 
-      submitButton.addEventListener("click", function (event) {
-        var isAnyFieldEmpty = false;
-        errorText.classList.remove("empty");
+      var form = document.getElementById('form');
+      var isValid = true; // フォームの有効性を追跡
+      var requiredFields = form.querySelectorAll('[required]'); // 必須フィールドを取得
+      var errorMessage = document.getElementsByClassName('contact__error-message')[0]; // エラーメッセージ要素を取得
 
-        requiredFields.forEach(function (field) {
-          if (field.value.trim() === "") {
-            field.classList.add("empty");
-            isAnyFieldEmpty = true;
-          } else {
-            field.classList.remove("empty");
-          }
-        });
+      // エラーメッセージとエラークラスを初期化
+      if (errorMessage) {
+        errorMessage.style.display = 'none';
+        errorMessage.classList.remove('is-error'); // 以前のエラークラスを削除
+      }
+      requiredFields.forEach(function (field) {
+        field.classList.remove('is-error'); // 以前のエラークラスを削除
+      });
 
-        if (isAnyFieldEmpty) {
-          event.preventDefault();
-          errorText.classList.add("empty");
+      // テキスト入力およびテキストエリアの検証
+      requiredFields.forEach(function (field) {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.classList.add('is-error'); // エラークラスを追加
         }
       });
-    } else {
-      console.log("The form element with id 'form' was not found.");
-    }
-  });
+
+      // すべてのチェックボックスグループの検証
+      var checkboxGroups = form.querySelectorAll('.form__checkbox-items, .form__privacy');
+      checkboxGroups.forEach(function(group) {
+        var checkboxes = group.querySelectorAll('input[type="checkbox"]');
+        var isCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        if (!isCheckboxChecked) {
+          isValid = false;
+          // すべてのチェックボックス項目にエラークラスを追加
+          document.querySelectorAll('.form__checkbox-item').forEach(function(item) {
+            item.classList.add('is-error');
+          });
+        } else {
+          // すべてのチェックボックス項目からエラークラスを削除
+          document.querySelectorAll('.form__checkbox-item').forEach(function(item) {
+            item.classList.remove('is-error');
+          });
+        }
+      });
+
+      // フォームが有効な場合、サンクスページに遷移
+      if (isValid) {
+        form.submit(); // フォームを送信
+        window.location.href = 'page-contact-thanks.html'; // リダイレクト
+      } else {
+        // フォームが無効な場合、エラーメッセージを表示
+        if (errorMessage) {
+          errorMessage.style.display = 'block';
+          errorMessage.classList.add('is-error'); // エラークラスを追加
+        }
+      }
+    });
+  }
+
+
 });

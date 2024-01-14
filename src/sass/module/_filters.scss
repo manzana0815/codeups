@@ -10,18 +10,22 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: rem(32);
+    gap: rem(16) rem(32);
   }
 }
 
 .filters__item {
+  max-width: rem(162);
+  width: 100%;
+}
+
+.filters__item a {
   border: 1px solid $blue;
   color: $blue;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-size: rem(14);
   line-height: calc(22 / 14);
-  max-width: rem(162);
   padding: rem(5) rem(20);
   text-align: center;
   text-transform: uppercase;
@@ -29,12 +33,12 @@
   width: 100%;
 }
 
-.filters__item.current {
+.filters__item.current a {
   background-color: $blue;
   color: $white;
 }
 
-.filters__item:hover {
+.filters__item a:hover {
   background-color: $blue;
   color: $white;
   transition: 0.3s ease;

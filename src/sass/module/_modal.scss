@@ -24,6 +24,14 @@
   visibility: visible;
 }
 
+.modal__inner {
+  background-color: transparent;
+  display: inline-block;
+  overflow: hidden;
+  pointer-events: none;
+  position: relative;
+}
+
 .modal__content {
   background-color: transparent; /* 背景色を透明に */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 影を追加 */
