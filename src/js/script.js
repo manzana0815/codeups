@@ -137,40 +137,46 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   // ------------------
   // MODAL
   // ------------------
-// モーダル要素を取得
-const modal = document.querySelector(".js-modal");
-if (modal) {
-  // モーダルコンテンツのクリックイベントが外側に伝播しないようにする
-  const modalInner = modal.querySelector(".modal__inner");
-  if (modalInner) {
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal || event.target === modalInner) {
-        modal.classList.remove("show");
-        document.body.style.overflow = "";
-      }
-    });
-
+  // モーダル要素を取得
+  const modal = document.querySelector(".js-modal");
+  if (modal) {
     // モーダルを表示する関数
     function openModal(imageSrc, caption) {
-      const modalImage = modal.querySelector(".js-modal-img");
-      modalImage.src = imageSrc;
-      modalImage.alt = caption;
+      const modalImage = modal.querySelector(".modal__img");
+      if (modalImage) {
+        modalImage.innerHTML = ""; // 既存の画像をクリア
 
-      modal.classList.add("show");
-      document.body.style.overflow = "hidden";
+        // 画像を生成してモーダル内に表示
+        modalImage.innerHTML = `<img src="${imageSrc}" alt="${caption}" />`;
+
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden"; // スクロールバーを非表示
+      }
     }
 
     // モーダルトリガーのイベントリスナーを設定
     const modalTriggerElements = document.querySelectorAll(".js-modal-trigger");
     modalTriggerElements.forEach(function (element) {
-      element.addEventListener("click", function () {
+      element.addEventListener("click", function (event) {
+        event.stopPropagation(); // クリックイベントの伝播を停止
         const imageSrc = element.getAttribute("data-src");
         const caption = element.getAttribute("data-caption");
         openModal(imageSrc, caption);
       });
     });
+
+    // モーダル外部をクリックして閉じるイベントリスナーを設定
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+        document.body.style.overflow = ""; // スクロールバーを表示
+        modal.querySelector(".modal__img").innerHTML = ""; // モーダル内の画像をクリア
+      }
+    });
   }
-}
+
+
+
 
   // ------------------
   // タブメニュー
@@ -284,7 +290,7 @@ if (modal) {
   var formBtn = document.querySelector('.form__btn');
 
   if (formBtn) {
-    formBtn.addEventListener('click', function(event) {
+    formBtn.addEventListener('click', function (event) {
       event.preventDefault(); // 通常のフォーム送信を防止
 
       var form = document.getElementById('form');
@@ -311,18 +317,18 @@ if (modal) {
 
       // すべてのチェックボックスグループの検証
       var checkboxGroups = form.querySelectorAll('.form__checkbox-items, .form__privacy');
-      checkboxGroups.forEach(function(group) {
+      checkboxGroups.forEach(function (group) {
         var checkboxes = group.querySelectorAll('input[type="checkbox"]');
         var isCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
         if (!isCheckboxChecked) {
           isValid = false;
           // すべてのチェックボックス項目にエラークラスを追加
-          document.querySelectorAll('.form__checkbox-item').forEach(function(item) {
+          group.querySelectorAll('.form__checkbox-item').forEach(function (item) {
             item.classList.add('is-error');
           });
         } else {
           // すべてのチェックボックス項目からエラークラスを削除
-          document.querySelectorAll('.form__checkbox-item').forEach(function(item) {
+          group.querySelectorAll('.form__checkbox-item').forEach(function (item) {
             item.classList.remove('is-error');
           });
         }
@@ -341,6 +347,5 @@ if (modal) {
       }
     });
   }
-
 
 });
