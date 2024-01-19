@@ -56,7 +56,7 @@ textarea {
   width: 100%;
 
   &:hover {
-    outline: 2px solid #C94800;
+    outline: 2px solid $blue;
   }
 
   /*↓↓選択されているときの色*/
@@ -64,6 +64,7 @@ textarea {
     outline: 2px solid $border-cr;
     transition: 0.2s;
   }
+
 }
 
 [type="button"],
@@ -298,7 +299,7 @@ textarea {
   width: 100%;
   z-index: 20;
 
-  @include mq(md){
+  @include mq(md) {
     margin-top: rem(40);
   }
 }
@@ -352,6 +353,7 @@ textarea {
   background-image: url("../images/common/arrow-right_green.svg");
 
 }
+
 .form__btn input {
   color: $white;
 }
@@ -360,21 +362,25 @@ textarea {
   color: $blue;
 }
 
-.form__item input.is-error {
-	border: 1px solid #c94800;
-	background: rgba(201, 72, 0, 0.2);
+.form__item input.is-error,
+.form__item textarea.is-error {
+  border: 1px solid #C94800;
+  background: rgba(201, 72, 0, 0.2);
+}
+
+.form__item input.is-error:hover,
+.form__item textarea.is-error:hover {
+  outline: 2px solid #C94800;
 }
 
 .form__item input.is-error::placeholder {
-	color: $white;
+  color: $white;
 }
 
-.form__item textarea.is-error {
-	border: 1px solid #c94800;
-	background: rgba(201, 72, 0, 0.2);
-}
 .form__checkbox-item.is-error span::before,
 .form__privacy label.is-error span::before {
-  border: 1px solid #c94800; /* エラー時の枠線の色 */
-  background: rgba(201, 72, 0, 0.2); /* エラー時の背景色 */
+  border: 1px solid #c94800;
+  /* エラー時の枠線の色 */
+  background: rgba(201, 72, 0, 0.2);
+  /* エラー時の背景色 */
 }
